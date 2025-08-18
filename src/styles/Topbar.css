@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'Tan Mon Cheri';
+  src: url('../assets/TanMonCheri.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 45px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #121111;
+  z-index: 1000;
+}
+
+
+.links {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+  justify-content: flex-end;
+  padding-right: 30px;
+  cursor: pointer;
+}
+
+.links a {
+  font-family: 'Lora', serif;
+  text-decoration: none;
+  color: #FFFCF2;
+  font-size: 20px;
+  transition: color 0.3s ease;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+.links a:hover {
+  color: #121111;
+}
+
+.logo {
+  list-style: none;
+  margin-left: 15px;
+  padding: 0;
+}
+
+.logo li {
+  list-style: none;
+}
+
+.logo a {
+  font-family: 'Tan Mon Cheri';
+  text-decoration: none;
+  color: #FFFCF2;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.logo a:hover {
+  color: #121111;
+}

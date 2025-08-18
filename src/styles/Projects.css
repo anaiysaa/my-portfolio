@@ -1,0 +1,59 @@
+/* Projects.css */
+
+#Projects {
+  min-height: 100vh;
+  background-color: #121111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 65px;
+  position: relative;
+  font-family: 'Lora', serif;
+  color: #FFFCF2;
+}
+
+.projects-container {
+  text-align: center;
+  max-width: 1400px;
+  width: 100%;
+  position: relative;
+}
+
+.projects-title {
+  font-family: "Tan Mon Cheri", serif;
+  font-size: 35px;
+  font-weight: normal;
+  color: #121111;
+  margin-bottom: 1rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.projects-subtitle {
+  font-family: 'Linotype Feltpen', sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  color: #121111;
+  margin-bottom: 3rem;
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.magazine-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: -10px;
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+/* Link Hover and Transformation */
+a {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  color: #54828f;
+}
+
+a:hover {
+  transform: scale(1.05);
+  text-decoration: none;
+}

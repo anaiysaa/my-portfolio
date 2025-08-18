@@ -1,0 +1,286 @@
+/* General Styling */
+h1 {
+  font-size: 30px;
+  font-weight: normal;
+  margin: 0;
+}
+
+h2 {
+  font-size: 35px;
+  font-weight: normal;
+}
+
+b {
+  font-family: 'Linotype Feltpen', sans-serif;
+  font-weight: normal;
+  font-size: 20px;
+}
+
+/* Link Hover and Transformation */
+a, .timeline-company-link {
+  transform: scale(1.02);
+  transition: transform 0.3s ease, border-bottom 0.3s ease;
+  text-decoration: none;
+}
+
+a:hover, .timeline-company-link:hover {
+  transform: scale(1.05);
+  text-decoration: none;
+}
+
+/* Experience Wrapper Layout */
+.experience-wrapper {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  background-color: #FFFCF2;
+  font-family: 'Lora', serif;
+}
+
+/* Full width experience panel (replaces the two-panel layout) */
+.experience-panel-full {
+  width: 100%;
+  padding-left: 65px;
+  padding-top: 40px;
+  font-family: "Tan Mon Cheri", serif;
+  font-size: 35px;
+}
+
+/* Legacy panel styles (can be removed if not using two-panel layout) */
+.experience-panel {
+  flex: 1.9;
+  padding-left: 65px;
+  padding-top: 40px;
+  border-right: 1px solid #121111;
+  font-family: "Tan Mon Cheri", serif;
+  font-size: 35px;
+}
+
+.skills-panel {
+  font-family: "Tan Mon Cheri", serif;
+  flex: 1.1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  padding-top: -100px;
+}
+
+/* Timeline Container Styling */
+.timeline-container {
+  background-color: #FFFCF2;
+  padding-top: 10px;
+  padding-left: 200px;
+  padding-right: 200px;
+  font-family: 'Lora', serif;
+  color: #121111;
+  min-height: 100vh;
+  position: relative;
+}
+
+.timeline {
+  position: relative;
+  margin-left: 350px;
+  padding-left: 0px;
+}
+
+/* Timeline Item Styling */
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 60px;
+  position: relative;
+  opacity: 0;
+  animation: fadeInUp 4s ease-out forwards;
+}
+
+/* Timeline vertical line */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0.5px;
+  height: calc(100% + 30px);
+  background-color: #121111;
+  z-index: 1;
+}
+
+/* Remove the line extension from the last timeline item */
+.timeline-item:last-child::before {
+  height: 50px;
+}
+
+.timeline-item[data-aos="fade-up"] {
+  opacity: 1;
+}
+
+.timeline-date {
+  position: absolute;
+  left: -500px;
+  font-family: "Linotype Feltpen", sans-serif;
+  font-size: 25px;
+  text-align: right;
+  width: 400px;
+}
+
+.timeline-title {
+  margin-left: 20px;
+  cursor: pointer;
+  font-size: 23px;
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.timeline-title:hover {
+  transform: scale(1.05);
+}
+
+.timeline-company-link {
+  display: block;
+  font-size: 17px;
+  margin-top: 4px;
+  margin-left: 20px;
+  color: #54828f;
+  text-decoration: none;
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.timeline-company-link:hover {
+  transform: scale(1.05);
+}
+
+/* Skills Integration - Timeline Skills Bubbles */
+.experience-skills {
+  margin-top: 10px;
+  margin-left: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-bubble {
+  background-color: #b1cdd5;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  color: #121111;
+  border: 1px solid #121111;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.skill-bubble:hover {
+  background-color: #d1d1d1;
+  transform: scale(1.05);
+}
+
+/* Popup Styling */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(18, 17, 17, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.popup-content {
+  background-color: #FFFCF2;
+  font-family: 'Lora', serif;
+  padding: 40px;
+  border-radius: 8px;
+  max-width: 800px;
+  width: 100%;
+  color: #121111;
+  overflow-y: auto;
+  max-height: 70vh;
+}
+
+/* Skills in popup */
+.popup-skills {
+  margin: 15px 0;
+  font-family: 'Lora';
+  font-size: 16px;
+}
+
+.popup-skill-bubble {
+  background-color: #b1cdd5;
+  color: #121111;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: 10px;
+  margin-top: 8px;
+  display: inline-block;
+  border: 1px solid #121111;
+  transition: all 0.3s ease;
+}
+
+.popup-skill-bubble:hover {
+  background-color: #d1d1d1;
+  transform: scale(1.05);
+}
+
+.popup-collage {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-collage img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 0px;
+}
+
+.photo-bar {
+  width: 40%;
+  height: 100%;
+  display: flex;
+}
+
+/* Animations */
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.popup-overlay.fade-out {
+  animation: fadeOut 0.3s ease-out forwards;
+}
+
