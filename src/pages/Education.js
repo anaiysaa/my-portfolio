@@ -21,7 +21,6 @@ function Education() {
                     <p>2024–2028</p>
                 </div>
                 <div className = "video-icons">
-                    
       <AutoPause src={HNAIcon} className = "hna-disk"/>
       <AutoPause src={PurdueIcon} className = "purdue-disk"/>
                 </div>

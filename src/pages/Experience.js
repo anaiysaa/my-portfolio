@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Experience.css';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // CSS for animation
+import 'aos/dist/aos.css';
 
 import NWNL from '../assets/images/NWNL.png';
 import EV from '../assets/images/evCollage.png';
@@ -13,7 +13,7 @@ const experiences = [
     dateTotal: 'August 2025 - Present',
     title: 'MCS Developer',
     company: 'Johnson & Johnson + Purdue Data Mine',
-    companyDesc: '',
+    companyDesc: 'Still in progress... more information coming soon!',
     location: '📍West Lafayette, IN',
     link: 'https://crp.the-examples-book.com/mcs-363/',
     skills: ['Python', 'APIs', 'Azure', 'SQL'],
@@ -21,7 +21,7 @@ const experiences = [
       {
         title: 'MCS Developer',
         date: 'August 2025 - Present',
-        description: 'in progress... more information coming soon!'
+        description: 'Developing an interactive R Shiny application to simulate, plan, and forecast clinical trial patient enrollment. Integrating statistical modeling and simulation-based methodologies to improve recruitment forecasting accuracy.'
       }
     ],
     newsLinks: [],
@@ -32,7 +32,7 @@ const experiences = [
     dateTotal: 'August 2025 - Present',
     title: 'Undergraduate Research Assistant',
     company: 'Purdue Vertically Integrated Projects',
-    companyDesc: '',
+    companyDesc: 'Still in progress... more information coming soon!',
     location: '📍West Lafayette, IN',
     link: '',
     skills: ['Python', 'C++', 'Git', 'DevOps'],
@@ -40,7 +40,7 @@ const experiences = [
       {
         title: 'Undergraduate Research Assistant',
         date: 'August 2025 - Present',
-        description: 'in progress... more information coming soon!'
+        description: 'Building privacy-preserving Machine Learning application using cryptography and GPU inference computations, enabling clients to use models without revealing inputs or model parameters.'
       }
     ],
     newsLinks: [],
@@ -88,7 +88,7 @@ const experiences = [
     id: 5,
     dateTotal: 'February 2025 - Present',
     title: 'Operations Member',
-    company: 'Purdue Vertically Integrated Projects \n Lady Elizabeth EV Kart Team',
+    company: 'Purdue Vertically Integrated Projects - Lady Elizabeth EV Kart Team',
     companyDesc: 'Lady Elizabeth is one of three EV Grand Prix kart teams for the Mitch Daniels School Of Business, Integrated Business Engineering Program',
     location: '📍West Lafayette, Indiana',
     link: 'https://business.purdue.edu/centers/dcmme/experiential-learning/ibe-ev-gokart/home.php',
@@ -169,14 +169,12 @@ function Experience() {
     }, 300);
   };
 
-  // Initialize AOS
   useEffect(() => {
-    AOS.init({ duration: 1000, offset: 0, once: false}); // Customize AOS options
+    AOS.init({ duration: 1000, offset: 0, once: false});
   }, []);
 
   return (
     <div className="experience-wrapper">
-      {/* Full Width Experience */}
       <div className="experience-panel-full">
         <h2>Technical Experience</h2>
 
@@ -186,7 +184,7 @@ function Experience() {
               <div
                 className="timeline-item"
                 key={exp.id}
-                data-aos="fade-up" // Add AOS data attribute for fade-in
+                data-aos="fade-up"
               >
                 <div className="timeline-date">{exp.dateTotal}</div>
                 <div className="timeline-title-wrapper" onClick={() => setActivePopup(exp)}>
@@ -204,8 +202,6 @@ function Experience() {
                       </span>
                     ))}
                   </a>
-                  
-                  {/* Skills bubbles */}
                   <div className="experience-skills">
                     {exp.skills.map((skill, i) => (
                       <span key={i} className="skill-bubble">
@@ -220,7 +216,6 @@ function Experience() {
         </div>
       </div>
 
-      {/* Fullscreen Popup */}
       {activePopup && (
         <div
           className={`popup-overlay ${isClosing ? 'fade-out' : ''}`}
@@ -250,16 +245,7 @@ function Experience() {
             <b>{activePopup.location}</b>
             <p>{activePopup.companyDesc}</p>
 
-            {/* Skills in popup */}
-            <div className="popup-skills">
-              <strong>Technologies Used: </strong>
-              {activePopup.skills.map((skill, i) => (
-                <span key={i} className="popup-skill-bubble">
-                  {skill}
-                </span>
-              ))}
-            </div>
-
+    
             {activePopup.roles?.map((role, i) => (
               <div key={i} style={{ marginBottom: '20px' }}>
                 <div
@@ -283,6 +269,15 @@ function Experience() {
                 </div>
               </div>
             ))}
+
+            <div className="popup-skills">
+              <p style={{ fontSize: '20px', fontFamily: 'Lora' }}>Skills & Tools: </p>
+              {activePopup.skills.map((skill, i) => (
+                <span key={i} className="popup-skill-bubble">
+                  {skill}
+                </span>
+              ))}
+            </div>
 
             {activePopup.collage && (
               <div className="popup-collage">

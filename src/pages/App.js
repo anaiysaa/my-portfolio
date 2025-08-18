@@ -20,9 +20,7 @@ function App() {
       <section id="experience">
         <Experience />
       </section>
-      {/*<section id="education">
-        <Education />
-      </section>*/}
+      
       <section id="Projects">
         <Projects/>
       </section>

@@ -1,18 +1,17 @@
 import React, { useEffect } from 'react';
 import '../styles/About.css';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // CSS for animation
+import 'aos/dist/aos.css';
 
 import Postcard from '../assets/images/AboutMePostcard.png';
 import Topbar from '../components/Topbar';
 
 function About() {
-  // Initialize AOS
   useEffect(() => {
     AOS.init({ 
       duration: 3500, 
       offset: 20,
-      once: false // Animation happens only once
+      once: false
     });
   }, []);
 

@@ -160,7 +160,6 @@
 }
 
 
-/*other page css*/
 .popup-overlay {
   position: fixed;
   top: 0;
@@ -229,96 +228,3 @@
     opacity: 0;
   }
 }
-
-/* spotify popup js code
-{activePopup && (
-  <div
-    className={`popup-overlay ${isClosing ? 'fade-out' : ''}`}
-    onClick={handleClose}
-  >
-    <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-      <h1>
-        <a
-          href={activePopup.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            color: '#121111',
-            textDecoration: 'none',
-            fontWeight: 'normal',
-          }}
-        >
-          {activePopup.company.split('\n').map((line, index) => (
-            <span key={index}>
-              {line}
-              <br />
-            </span>
-          ))}
-        </a>
-      </h1>
-
-      <b>{activePopup.location}</b>
-      <p>{activePopup.companyDesc}</p>
-
-      {activePopup.roles?.map((role, i) => (
-        <div key={i} style={{ marginBottom: '20px' }}>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              fontSize: '20px',
-              fontFamily: 'Lora',
-            }}
-          >
-            <span>{role.title}</span>
-            <span style={{ fontStyle: 'italic' }}>{role.date}</span>
-          </div>
-          <div style={{ marginTop: '8px' }}>
-            {role.description.split('\n').map((line, index) => (
-              <span key={index}>
-                {line}
-                <br />
-              </span>
-            ))}
-          </div>
-        </div>
-      ))}
-
-      {activePopup.collage?.length > 0 && (
-        <img src={PhotoGallery} className="photo-bar" />
-      )}
-
-      {activePopup.collage && (
-        <div className="popup-collage">
-          <img src={activePopup.collage} />
-        </div>
-      )}
-
-      {activePopup.newsLinks?.length > 0 && (
-        <p style={{ fontSize: '20px', fontFamily: 'Lora' }}>
-          Publications & Posts:
-        </p>
-      )}
-
-      {activePopup.newsLinks?.map((newsLink, i) => (
-        <div key={i}>
-          <a
-            href={newsLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: 'inline-block',
-              color: '#518ca5',
-              textDecoration: 'underline',
-              fontWeight: '500',
-              marginBottom: '20px',
-            }}
-          >
-            {newsLink}
-          </a>
-        </div>
-      ))}
-    </div>
-  </div>
-)}
-*/

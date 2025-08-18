@@ -1,5 +1,3 @@
-/* Projects.css */
-
 #Projects {
   min-height: 100vh;
   background-color: #121111;
@@ -45,7 +43,6 @@
   animation: fadeInUp 1s ease-out 0.4s both;
 }
 
-/* Link Hover and Transformation */
 a {
   transform: scale(1.02);
   transition: transform 0.3s ease;

@@ -1,4 +1,3 @@
-/* General Styling */
 h1 {
   font-size: 30px;
   font-weight: normal;
@@ -16,7 +15,6 @@ b {
   font-size: 20px;
 }
 
-/* Link Hover and Transformation */
 a, .timeline-company-link {
   transform: scale(1.02);
   transition: transform 0.3s ease, border-bottom 0.3s ease;
@@ -28,7 +26,6 @@ a:hover, .timeline-company-link:hover {
   text-decoration: none;
 }
 
-/* Experience Wrapper Layout */
 .experience-wrapper {
   display: flex;
   flex-direction: row;
@@ -37,7 +34,6 @@ a:hover, .timeline-company-link:hover {
   font-family: 'Lora', serif;
 }
 
-/* Full width experience panel (replaces the two-panel layout) */
 .experience-panel-full {
   width: 100%;
   padding-left: 65px;
@@ -46,7 +42,6 @@ a:hover, .timeline-company-link:hover {
   font-size: 35px;
 }
 
-/* Legacy panel styles (can be removed if not using two-panel layout) */
 .experience-panel {
   flex: 1.9;
   padding-left: 65px;
@@ -66,7 +61,6 @@ a:hover, .timeline-company-link:hover {
   padding-top: -100px;
 }
 
-/* Timeline Container Styling */
 .timeline-container {
   background-color: #FFFCF2;
   padding-top: 10px;
@@ -84,7 +78,6 @@ a:hover, .timeline-company-link:hover {
   padding-left: 0px;
 }
 
-/* Timeline Item Styling */
 .timeline-item {
   display: flex;
   align-items: flex-start;
@@ -94,7 +87,6 @@ a:hover, .timeline-company-link:hover {
   animation: fadeInUp 4s ease-out forwards;
 }
 
-/* Timeline vertical line */
 .timeline-item::before {
   content: '';
   position: absolute;
@@ -106,7 +98,6 @@ a:hover, .timeline-company-link:hover {
   z-index: 1;
 }
 
-/* Remove the line extension from the last timeline item */
 .timeline-item:last-child::before {
   height: 50px;
 }
@@ -151,7 +142,6 @@ a:hover, .timeline-company-link:hover {
   transform: scale(1.05);
 }
 
-/* Skills Integration - Timeline Skills Bubbles */
 .experience-skills {
   margin-top: 10px;
   margin-left: 20px;
@@ -176,7 +166,6 @@ a:hover, .timeline-company-link:hover {
   transform: scale(1.05);
 }
 
-/* Popup Styling */
 .popup-overlay {
   position: fixed;
   top: 0;
@@ -203,7 +192,6 @@ a:hover, .timeline-company-link:hover {
   max-height: 70vh;
 }
 
-/* Skills in popup */
 .popup-skills {
   margin: 15px 0;
   font-family: 'Lora';
@@ -250,7 +238,6 @@ a:hover, .timeline-company-link:hover {
   display: flex;
 }
 
-/* Animations */
 @keyframes slideUp {
   0% {
     opacity: 0;

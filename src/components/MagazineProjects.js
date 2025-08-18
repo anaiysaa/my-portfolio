@@ -1,4 +1,3 @@
-// MagazineProjects.js
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Github, ExternalLink, Calendar, Tag } from 'lucide-react';
 import '../styles/MagazineProjects.css';
@@ -77,7 +76,7 @@ const ProjectContent = ({ project, pageNumber }) => (
 );
 
 const MagazineProjects = () => {
-  const [currentPage, setCurrentPage] = useState(-1); // -1 is cover
+  const [currentPage, setCurrentPage] = useState(-1);
   const [isFlipping, setIsFlipping] = useState(false);
 
   const totalPages = projects.length;
@@ -119,7 +118,6 @@ const MagazineProjects = () => {
               ></div>
             ))}
 
-            {/* Cover Page */}
             <div
               className={`magazine-page cover-page ${currentPage === -1 ? 'active' : 'flipped'}`}
               style={{ zIndex: currentPage === -1 ? totalPages + 20 : 0 }}
@@ -141,7 +139,6 @@ const MagazineProjects = () => {
               </div>
             </div>
 
-            {/* Project Pages */}
             {projects.map((project, index) => (
               <div
                 key={project.id}
@@ -175,7 +172,6 @@ const MagazineProjects = () => {
           </div>
         </div>
 
-        {/* Navigation Controls */}
         <div className="book-controls">
           <button
             onClick={prevPage}

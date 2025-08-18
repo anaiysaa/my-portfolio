@@ -10,7 +10,6 @@ const Topbar = () => {
       <ul className="links">
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
-        {/*<li><a href="#education">Education</a></li>*/}
         <li><a href="#Projects">Projects</a></li>
         <li><a href="#contacts">Contact</a></li>
         <li><a href="#">BTS+</a></li>

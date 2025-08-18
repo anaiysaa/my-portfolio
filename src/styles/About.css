@@ -25,7 +25,6 @@ body, html {
   border-radius: 8px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease;
-  /* Initial state for animation - will be overridden by AOS */
   opacity: 0;
   transform: rotate(-2deg) translateY(50px);
 }
@@ -34,7 +33,6 @@ body, html {
   transform: rotate(-2deg) scale(1.05);
 }
 
-/* When AOS animation is initialized */
 .postcard[data-aos="fade-up"] {
   opacity: 1;
   transform: rotate(-2deg) translateY(0);
@@ -46,12 +44,10 @@ body, html {
   font-family: 'Lora', serif;
   font-size: 20px;
   line-height: 1.6;
-  /* Initial state for animation */
   opacity: 0;
   transform: translateY(50px);
 }
 
-/* When AOS animation is initialized */
 .about-text[data-aos="fade-up"] {
   opacity: 1;
   transform: translateY(0);
@@ -66,7 +62,6 @@ body, html {
   text-transform: uppercase;
 }
 
-/* Additional animation keyframes for smoother effects */
 @keyframes slideUpFade {
   0% {
     opacity: 0;
@@ -78,7 +73,6 @@ body, html {
   }
 }
 
-/* Fallback animation if AOS doesn't load */
 .postcard-fallback {
   animation: slideUpFade 1s ease-out 0.2s both;
 }

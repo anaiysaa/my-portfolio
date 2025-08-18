@@ -12,7 +12,6 @@ function Home() {
     <div>
       <Topbar /> 
       <section id = "home">
-        {/*<img src={HomePic}/>*/}
         <img src={Title} className="title"/>
       <AutoPause src={Video} className = "videoHome"/>
       </section>

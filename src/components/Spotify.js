@@ -76,7 +76,6 @@ const Skills = () => {
       </div>
       <img src = {Bottom} className = "spotify-bottom"/>
 
-      {/* Album Popup */}
       {activePopup && (
           <div
     className={`skills-popup-overlay ${isClosing ? 'closing' : ''}`}
