@@ -7,6 +7,7 @@ import Education from '../pages/Education.js';
 import Contacts from '../pages/Contacts.js';
 import Experience from '../pages/Experience.js';
 import Projects from '../pages/Projects.js';
+import Footer from '../components/Footer.js';
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
       <section id="contacts">
         <Contacts/>
       </section>      
+      <section id="footer">
+        <Footer/>
+      </section>    
     </div>
   );
 }

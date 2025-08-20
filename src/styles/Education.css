@@ -6,7 +6,7 @@
 }
 
 body, html {
-  background-color: #FFFCF2;
+  background: linear-gradient(180deg, #0a0c0d 0%, #11161a 50%, #0f1417 100%);
   margin: 0;
   padding: 0;
   height: 848px;
@@ -33,7 +33,7 @@ body, html {
 
 .education-container {
   position: relative;
-  background-color: #FFFCF2;
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   align-items: left;

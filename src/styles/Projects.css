@@ -1,6 +1,6 @@
 #Projects {
   min-height: 100vh;
-  background-color: #121111;
+  background: linear-gradient(180deg, #0a0c0d 0%, #0f1417 70%, #121a20 90%);
   display: flex;
   align-items: center;
   justify-content: center;

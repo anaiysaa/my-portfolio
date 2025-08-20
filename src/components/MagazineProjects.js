@@ -75,11 +75,12 @@ const ProjectContent = ({ project, pageNumber }) => (
   </div>
 );
 
-const MagazineProjects = () => {
+const MagazineProjects = ({ coverImage }) => {
   const [currentPage, setCurrentPage] = useState(-1);
   const [isFlipping, setIsFlipping] = useState(false);
 
-  const totalPages = projects.length;
+  const augmentedProjects = [{ id: 'toc', toc: true, title: 'Table of Contents' }, ...projects];
+  const totalPages = augmentedProjects.length;
 
   const flipToPage = (page) => {
     if (!isFlipping && page >= -1 && page <= totalPages - 1) {
@@ -93,16 +94,12 @@ const MagazineProjects = () => {
 
   const nextPage = () => flipToPage(currentPage + 1);
   const prevPage = () => flipToPage(currentPage - 1);
-
-  const handlePageClick = (side) => {
-    if (side === 'right') nextPage();
-    else prevPage();
-  };
+  const handlePageClick = (side) => (side === 'right' ? nextPage() : prevPage());
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-12">
       <div className="magazine-projects-wrapper">
-        <div className="book-container">
+        <div className={`book-container ${currentPage === -1 ? 'closed' : 'open'}`}>
           <div className="book-spine"></div>
 
           <div className="pages-stack">
@@ -118,28 +115,34 @@ const MagazineProjects = () => {
               ></div>
             ))}
 
+            {/* Cover Page */}
             <div
               className={`magazine-page cover-page ${currentPage === -1 ? 'active' : 'flipped'}`}
               style={{ zIndex: currentPage === -1 ? totalPages + 20 : 0 }}
             >
               <div className="page-front">
-                <div className="page-content cover-content" onClick={() => nextPage()}>
-                  <div className="cover-design">
-                    <div className="cover-header">
-                      <h1 className="cover-title">YOUR PORTFOLIO</h1>
-                      <div className="cover-subtitle">READY TO CUSTOMIZE</div>
-                      <div className="cover-issue">Template Ready</div>
+                <div
+                  className={`page-content cover-content ${coverImage ? 'has-image' : ''}`}
+                  onClick={nextPage}
+                >
+                  {coverImage ? (
+                    <img src={coverImage} alt="Cover" />
+                  ) : (
+                    <div className="cover-design">
+                      <div className="cover-header">
+                        <h1 className="cover-title">YOUR PORTFOLIO</h1>
+                        <div className="cover-subtitle">READY TO CUSTOMIZE</div>
+                        <div className="cover-issue">Template Ready</div>
+                      </div>
+                      <div className="click-hint">Click to open →</div>
                     </div>
-                    <div className="click-hint">Click to open →</div>
-                    <div className="cover-image">
-                      <div className="cover-graphic"></div>
-                    </div>
-                  </div>
+                  )}
                 </div>
               </div>
             </div>
 
-            {projects.map((project, index) => (
+            {/* Project Pages */}
+            {augmentedProjects.map((project, index) => (
               <div
                 key={project.id}
                 className={`magazine-page ${
@@ -155,7 +158,29 @@ const MagazineProjects = () => {
                     className="page-content right-page"
                     onClick={() => handlePageClick('right')}
                   >
-                    <ProjectContent project={project} pageNumber={index + 1} />
+                    {project.toc ? (
+                      <div className="toc-list">
+                        <h2 className="project-title" style={{ marginBottom: '20px' }}>Projects</h2>
+                        <div className="toc-items">
+                          {projects.map((p, i) => (
+                            <button
+                              key={p.id}
+                              className="toc-item"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                flipToPage(i + 1);
+                              }}
+                              title={`Open ${p.title}`}
+                            >
+                              <span className="toc-title">{p.title}</span>
+                              <span className="toc-sub">{p.subtitle}</span>
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      <ProjectContent project={project} pageNumber={index} />
+                    )}
                   </div>
                 </div>
 
@@ -164,7 +189,9 @@ const MagazineProjects = () => {
                     className="page-content left-page"
                     onClick={() => handlePageClick('left')}
                   >
-                    {index > 0 && <ProjectContent project={projects[index - 1]} pageNumber={index} />}
+                    {index > 0 && !augmentedProjects[index - 1].toc && (
+                      <ProjectContent project={augmentedProjects[index - 1]} pageNumber={index - 1} />
+                    )}
                   </div>
                 </div>
               </div>
@@ -172,6 +199,7 @@ const MagazineProjects = () => {
           </div>
         </div>
 
+        {/* Navigation */}
         <div className="book-controls">
           <button
             onClick={prevPage}

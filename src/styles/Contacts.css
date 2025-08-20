@@ -1,18 +1,20 @@
 body, html {
-  background-color: #121111;
   margin: 0;
   padding: 0;
-  height: 100%;
   width: 100%;
+}
+
+#contacts {
+  background: linear-gradient(180deg, #121a20 0%, #0b141a 35%, #05080a 75%, #000000 100%);
 }
 
 .contacts-container {
   position: relative;
-  background-color: #121111;
+  background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   padding: 0 5vw;
   box-sizing: border-box;
@@ -36,7 +38,7 @@ body, html {
   display: flex;
   gap: 12px;
   bottom: 174px;
-  left: 290px;
+  left: 340px;
 }
 
 .contact-form {

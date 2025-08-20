@@ -16,7 +16,7 @@ const experiences = [
     companyDesc: 'Still in progress... more information coming soon!',
     location: '📍West Lafayette, IN',
     link: 'https://crp.the-examples-book.com/mcs-363/',
-    skills: ['Python', 'APIs', 'Azure', 'SQL'],
+    skills: ['R Shiney', 'Statistical Modeling', 'Simulation', 'Data Analysis'],
     roles: [
       {
         title: 'MCS Developer',
@@ -35,12 +35,12 @@ const experiences = [
     companyDesc: 'Still in progress... more information coming soon!',
     location: '📍West Lafayette, IN',
     link: '',
-    skills: ['Python', 'C++', 'Git', 'DevOps'],
+    skills: ['Python', 'C', 'Machine Learning'],
     roles: [
       {
         title: 'Undergraduate Research Assistant',
         date: 'August 2025 - Present',
-        description: 'Building privacy-preserving Machine Learning application using cryptography and GPU inference computations, enabling clients to use models without revealing inputs or model parameters.'
+        description: 'Building privacy-preserving Machine Learning application using cryptography and GPU inference computations, aiming to allow clients to use models without revealing inputs or model parameters.'
       }
     ],
     newsLinks: [],
@@ -49,17 +49,17 @@ const experiences = [
   {
     id: 3,
     dateTotal: 'June 2025 - August 2025',
-    title: 'Software Engineering Intern',
+    title: 'Software Engineering Intern - Team Lead',
     company: 'Quadrant Technologies',
     companyDesc: '',
     location: '📍Seattle, WA',
     link: 'https://www.quadranttechnologies.com/',
-    skills: ['JavaScript', 'React', 'APIs', 'AWS CDK', 'Git'],
+    skills: ['Team Mangement','Product Manegment', 'Fullstack Development', 'DevOps/Cloud', 'Azure AI', 'Python', 'Flask', 'JavaScript', 'React', 'Tailwind', 'SQL', 'PowerBI', 'Azure', 'Git'],
     roles: [
       {
-        title: 'Software Engineering Intern',
+        title: 'Software Engineering Intern - Team Lead',
         date: 'June 2025 - August 2025',
-        description: 'in progress... more information coming soon!'
+        description: '- Led a team to design and deploy a full-stack company portal web app with React frontend and Python Flask backend on Azure App Service, ensuring secure backend database communication. \n -Integrated Azure AI Services (GPT-4, Deepseek R1) for AI text classification, document parsing, and assistant chatbot using prompt design, context orchestration, and RAG workflows. \n -Processed structured and unstructured data with Python and SQL in Azure Data Studio, enabling real-time queries and insights.'
       }
     ],
     newsLinks: [],
@@ -73,12 +73,12 @@ const experiences = [
     companyDesc: '',
     location: '📍Seattle, WA',
     link: 'https://adapts.ai/',
-    skills: ['Python', 'Flask', 'MongoDB', 'APIs', 'CI/CD'],
+    skills: ['Python', 'Javascript', 'Git', 'AWS CDKs', 'DevOps'],
     roles: [
       {
         title: 'Software Engineering Intern',
         date: 'May 2025 - June 2025',
-        description: 'in progress... more information coming soon!'
+        description: '- Managed open-source publishing and maintenance of Adapts AI’s AWS CDK construct libraries. \n - Performed code security reviews to ensure compliance with best practices and vulnerability standards. \n - Oversaw repository development, including versioning, npm publishing, dependency updates, and documentation improvements.'
       }
     ],
     newsLinks: [],
@@ -88,11 +88,11 @@ const experiences = [
     id: 5,
     dateTotal: 'February 2025 - Present',
     title: 'Operations Member',
-    company: 'Purdue Vertically Integrated Projects - Lady Elizabeth EV Kart Team',
+    company: 'Purdue Vertically Integrated Projects - Lady Elizabeth EV Kart Team + Toyota',
     companyDesc: 'Lady Elizabeth is one of three EV Grand Prix kart teams for the Mitch Daniels School Of Business, Integrated Business Engineering Program',
     location: '📍West Lafayette, Indiana',
     link: 'https://business.purdue.edu/centers/dcmme/experiential-learning/ibe-ev-gokart/home.php',
-    skills: ['Power BI', 'Azure Data Studio', 'DevOps'],
+    skills: ['Electrical Systems', 'Mechanical Systems', 'Teamwork', 'Problem Solving'],
     roles: [
       {
         title: 'Operations Team Member (2025 EV Grand Prix)',
@@ -115,7 +115,7 @@ const experiences = [
     companyDesc: '',
     location: '📍Federal Way, WA',
     link: 'https://www.nwnlabs.org/',
-    skills: ['Python', 'C++', 'Azure', 'SQL', 'APIs'],
+    skills: ['C++', 'Azure', 'SQL', 'Electrical Systems', 'Data Acquisition', 'LabJack', 'DAQFactory'],
     roles: [
       {
         title: 'Student Research Technician',
@@ -134,7 +134,7 @@ const experiences = [
     companyDesc: 'Women Advancing Tomorrows Technologists (WATT) is a non-profit dedicated to introducing girls to computer science at a young age.',
     location: '📍Seattle, WA',
     link: 'https://www.wattcoding.com/',
-    skills: ['HTML', 'CSS', 'JavaScript', 'Python', 'Java'],
+    skills: ['Team Mangement','HTML', 'CSS', 'JavaScript', 'Python', 'Java'],
     roles: [
       {
         title: 'Student Advisory Board Member',
@@ -176,7 +176,7 @@ function Experience() {
   return (
     <div className="experience-wrapper">
       <div className="experience-panel-full">
-        <h2>Technical Experience</h2>
+        <h2>Experience</h2>
 
         <div className="timeline-container">
           <div className="timeline">

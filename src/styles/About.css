@@ -1,17 +1,19 @@
 body, html {
-  background-color: #121111;
   margin: 0;
   padding: 0;
-  height: 100%;
   width: 100%;
 }
 
+#about {
+  background: linear-gradient(180deg, #0a0c0d 0%, #11161a 55%, #0f1417 100%);
+}
+
 .about-container {
-  background-color: #121111;
+  background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   padding: 0 5vw;
   box-sizing: border-box;
