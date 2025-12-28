@@ -5,14 +5,14 @@ h1 {
 }
 
 h2 {
-  font-size: 35px;
+  font-size: 75px;
   font-weight: normal;
 }
 
 b {
-  font-family: 'Linotype Feltpen', sans-serif;
+  font-family: "Cutive Mono", monospace;
   font-weight: normal;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 a, .timeline-company-link {
@@ -23,37 +23,36 @@ a, .timeline-company-link {
 
 a:hover, .timeline-company-link:hover {
   transform: scale(1.05);
-  text-decoration: none;
+  color: var(--color-rosewood);
 }
 
 .experience-wrapper {
   display: flex;
   flex-direction: row;
   min-height: 100vh;
-  background: linear-gradient(135deg, #0a151b 0%, #12323e 45%, #2a6b80 100%);
-  font-family: 'Lora', serif;
+  background: #FFFCF5;
+  font-family: 'Old Standard TT', serif;
 }
 
 .experience-panel-full {
   width: 100%;
   padding-left: 65px;
   padding-top: 40px;
-  font-family: "Tan Mon Cheri", serif;
-  font-size: 35px;
-  color: #F2F7FA;
+  font-family: 'Pinyon Script', cursive;
+  color: var(--color-rosewood);
 }
 
 .experience-panel {
   flex: 1.9;
   padding-left: 65px;
   padding-top: 40px;
+  font-size: 75px;
   border-right: 1px solid #121111;
-  font-family: "Tan Mon Cheri", serif;
-  font-size: 35px;
+  font-family: 'Pinyon Script', cursive;
 }
 
 .skills-panel {
-  font-family: "Tan Mon Cheri", serif;
+  font-family: 'Pinyon Script', cursive;
   flex: 1.1;
   display: flex;
   flex-direction: column;
@@ -67,8 +66,8 @@ a:hover, .timeline-company-link:hover {
   padding-top: 10px;
   padding-left: 200px;
   padding-right: 200px;
-  font-family: 'Lora', serif;
-  color: #EAF2F7;
+  font-family: 'Old Standard TT', serif;
+  color: black;
   min-height: 100vh;
   position: relative;
 }
@@ -110,8 +109,8 @@ a:hover, .timeline-company-link:hover {
 .timeline-date {
   position: absolute;
   left: -450px;
-  font-family: "Linotype Feltpen", sans-serif;
-  font-size: 25px;
+  font-family: "Cutive Mono", monospace;
+  font-size: 20px;
   text-align: right;
   width: 400px;
 }
@@ -126,6 +125,7 @@ a:hover, .timeline-company-link:hover {
 
 .timeline-title:hover {
   transform: scale(1.05);
+  color: var(--color-rosewood);
 }
 
 .timeline-company-link {
@@ -133,7 +133,7 @@ a:hover, .timeline-company-link:hover {
   font-size: 17px;
   margin-top: 4px;
   margin-left: 20px;
-  color: #DCE9EE;
+  color: black;
   text-decoration: none;
   transform: scale(1);
   transition: transform 0.3s ease, color 0.2s ease;
@@ -141,7 +141,7 @@ a:hover, .timeline-company-link:hover {
 
 .timeline-company-link:hover {
   transform: scale(1.05);
-  color: #F0FAFF;
+  color: var(--color--rosewood);
 }
 
 .experience-skills {
@@ -157,15 +157,16 @@ a:hover, .timeline-company-link:hover {
   padding: 6px 12px;
   border-radius: 20px;
   font-size: 12px;
-  color: #EAF2F7;
-  border: 1px solid rgba(234, 242, 247, 0.6);
+  color: black;
+  border: 1px solid black;
   transition: all 0.3s ease;
   font-weight: 500;
 }
 
 .skill-bubble:hover {
-  background-color: rgba(220, 233, 238, 0.35);
+  background-color: var(--color-rosewood);
   transform: scale(1.05);
+  color: white;
 }
 
 .popup-overlay {
@@ -184,24 +185,37 @@ a:hover, .timeline-company-link:hover {
 
 .popup-content {
   background-color: #FFFCF2;
-  font-family: 'Lora', serif;
+  font-family: 'Old Standard TT', serif;
   padding: 40px;
   border-radius: 8px;
-  max-width: 800px;
+  max-width: 1200px;
   width: 100%;
   color: #121111;
   overflow-y: auto;
-  max-height: 70vh;
+  max-height: 90vh;
 }
+
+.right {
+  padding-left: 15px;
+}
+
+.left {
+  max-width: 500px;
+  height: auto;
+}
+.top {
+  display: flex;
+}
+
 
 .popup-skills {
   margin: 15px 0;
-  font-family: 'Lora';
+  font-family: 'Old Standard TT', serif;;
   font-size: 16px;
 }
 
 .popup-skill-bubble {
-  background-color: #b1cdd5;
+  background-color: rgba(177, 205, 213, 0.25);
   color: #121111;
   padding: 8px 16px;
   border-radius: 20px;
@@ -215,8 +229,9 @@ a:hover, .timeline-company-link:hover {
 }
 
 .popup-skill-bubble:hover {
-  background-color: #d1d1d1;
+  background-color: var(--color-rosewood);
   transform: scale(1.05);
+  color: white;
 }
 
 .popup-collage {

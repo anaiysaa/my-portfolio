@@ -1,9 +1,7 @@
 .footer {
-  background: #060707;
-  color: #EAF2F7;
-  padding: 40px 20px;
+  background: var(--color-white);
+  padding: 20px 10px;
   text-align: center;
-  font-family: 'Lora', serif;
   position: relative;
 }
 
@@ -14,35 +12,36 @@
 
 .footer-title {
   font-size: 35px;
-  font-family: "Tan Mon Cheri", serif;
-  color: #F2F7FA;
+  font-family: "Old Standard TT", serif;
+  color: black;
   margin-bottom: 10px;
 }
 
 .footer-tagline {
-  color: #DCE9EE;
+  color:  black;
   font-size: 16px;
   max-width: 600px;
   margin: 0 auto 30px auto;
+ font-family: "Cutive Mono", monospace;
 }
 
 .social-links {
   display: flex;
   justify-content: center;
   gap: 15px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .social-icon {
-  background-color: rgba(177, 205, 213, 0.2);
-  padding: 10px;
-  border-radius: 50%;
-  color: #EAF2F7;
-  border: 1px solid rgba(234, 242, 247, 0.6);
+  color: var(--color-rosewood);
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--color-rosewood);
 }
 
 .social-icon:hover {
@@ -65,7 +64,7 @@
 .footer-copy {
   display: flex;
   gap: 6px;
-  color: #B1CDD5;
+  color: var(--color-rosewood);
   align-items: center;
   font-size: 14px;
 }
@@ -95,7 +94,7 @@
 .footer-message {
   margin-top: 10px;
   font-size: 13px;
-  color: #9BB5C1;
+  color: var(--color-rosewood);
 }
 
 @keyframes pulse {

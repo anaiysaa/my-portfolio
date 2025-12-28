@@ -4,8 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 import NWNL from '../assets/images/NWNL.png';
-import EV from '../assets/images/evCollage.png';
-import PhotoGallery from '../assets/images/photo gallery.png'
+import Gallery from '../components/ExpPinGallery';
 
 const experiences = [
   {
@@ -29,8 +28,8 @@ const experiences = [
   },
   {
     id: 2,
-    dateTotal: 'August 2025 - Present',
-    title: 'Undergraduate Research Assistant',
+    dateTotal: 'August 2025 - December 2025',
+    title: 'Undergraduate Researcher',
     company: 'Purdue Vertically Integrated Projects',
     companyDesc: 'Still in progress... more information coming soon!',
     location: '📍West Lafayette, IN',
@@ -105,7 +104,7 @@ const experiences = [
       'https://www.linkedin.com/posts/purduebusiness_lady-elizabeth-ugcPost-7320108834809671680-afbS?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD-AyMcBvzzO54CXPpzeTEW0Nb2SOv-RGYM',
       'https://www.linkedin.com/posts/dauch-center-for-the-management-of-manufacturing-enterprises_dauchcenter-womeninstem-vipgokart-ugcPost-7316523152736407553-XP3z?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD-AyMcBvzzO54CXPpzeTEW0Nb2SOv-RGYM'
     ],
-    collage: EV
+    collage: '..assets/experience_gallery/GrandPrix',
   },
   {
     id: 6,
@@ -124,7 +123,7 @@ const experiences = [
       }
     ],
     newsLinks: [],
-    collage: NWNL
+    collage: '',
   },
   {
     id: 7,
@@ -222,6 +221,11 @@ function Experience() {
           onClick={handleClose}
         >
           <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+          <div className = "top">
+          <div className = "left">
+                <Gallery folderPath = {(activePopup.collage)} />
+          </div>
+            <div className = "right">
             <h1>
               <a
                 href={activePopup.link}
@@ -231,6 +235,7 @@ function Experience() {
                   color: '#121111',
                   textDecoration: 'none',
                   fontWeight: 'normal',
+                  fontSize: '25px',
                 }}
               >
                 {activePopup.company.split('\n').map((line, index) => (
@@ -242,8 +247,8 @@ function Experience() {
               </a>
             </h1>
 
-            <b>{activePopup.location}</b>
-            <p>{activePopup.companyDesc}</p>
+            <b >{activePopup.location}</b>
+            <p style={{ marginBottom: '10px', marginTop: '10px', }}>{activePopup.companyDesc}</p>
 
     
             {activePopup.roles?.map((role, i) => (
@@ -253,13 +258,12 @@ function Experience() {
                     display: 'flex',
                     justifyContent: 'space-between',
                     fontSize: '20px',
-                    fontFamily: 'Lora',
                   }}
                 >
                   <span>{role.title}</span>
-                  <span style={{ fontStyle: 'italic' }}>{role.date}</span>
+                  <span style={{ fontFamily: 'Cutive Mono', fontSize: '15px', marginTop: '3px',}}>{role.date}</span>
                 </div>
-                <div style={{ marginTop: '8px' }}>
+                <div style={{ marginTop: '10px' }}>
                   {role.description.split('\n').map((line, index) => (
                     <span key={index}>
                       {line}
@@ -271,22 +275,17 @@ function Experience() {
             ))}
 
             <div className="popup-skills">
-              <p style={{ fontSize: '20px', fontFamily: 'Lora' }}>Skills & Tools: </p>
+              <p style={{ fontSize: '20px', fontFamily: 'Old Standard TT', }}>Skills & Tools: </p>
               {activePopup.skills.map((skill, i) => (
                 <span key={i} className="popup-skill-bubble">
                   {skill}
                 </span>
               ))}
             </div>
-
-            {activePopup.collage && (
-              <div className="popup-collage">
-                <img src={activePopup.collage} alt="Collage" />
-              </div>
-            )}
-
-            {activePopup.newsLinks?.length > 0 && (
-              <p style={{ fontSize: '20px', fontFamily: 'Lora' }}>
+          </div>
+          </div>
+          {activePopup.newsLinks?.length > 0 && (
+              <p style={{ fontSize: '20px', fontFamily: 'Old Standard TT', }}>
                 Publications & Posts:
               </p>
             )}
@@ -302,14 +301,16 @@ function Experience() {
                     color: '#518ca5',
                     textDecoration: 'underline',
                     fontWeight: '500',
-                    marginBottom: '20px',
+                    marginBottom: '10px',
+                    fontSize: '10px',
+                    paddingLeft: '10px',
                   }}
                 >
                   {newsLink}
                 </a>
               </div>
             ))}
-          </div>
+        </div>
         </div>
       )}
     </div>

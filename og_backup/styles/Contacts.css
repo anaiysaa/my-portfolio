@@ -1,0 +1,136 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+#contacts {
+  background: linear-gradient(180deg, #121a20 0%, #0b141a 35%, #05080a 75%, #000000 100%);
+}
+
+.contacts-container {
+  position: relative;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 0 5vw;
+  box-sizing: border-box;
+  gap: 5vw;
+}
+
+.postcards {
+  position: relative;
+  width: 1000px;
+  height: auto;
+  animation: fadeIn 5s ease forwards;
+  animation-delay: 0.3s; /* optional: delay form slightly after postcards */
+}
+
+.contact-form {
+  position: absolute;
+  top: 342px;
+  left: 675px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  padding: 24px;
+  color: #FFFCF2;
+  font-family: 'Lora', serif;
+  gap: 12px;
+  animation: fadeIn 5s ease forwards;
+  animation-delay: 0.3s; /* optional: delay form slightly after postcards */
+  opacity: 0; /* start hidden */
+}
+
+.icons img {
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+}
+
+.icons {
+  position: absolute;
+  display: flex;
+  gap: 12px;
+  bottom: 174px;
+  left: 340px;
+}
+
+
+.field {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.subject-input {
+    background-color: transparent;
+  width: 250px;
+  height: 25px;
+  border: 2px solid #FFFCF2;
+  border-radius: 8px;
+  color: #000000;
+  font-size: 16px;
+}
+
+.email-input {
+    background-color: transparent;
+  width: 273px;
+  height: 25px;
+  border: 2px solid #FFFCF2;
+  border-radius: 8px;
+  color: #000000;
+  font-size: 16px;
+  margin-top: 14px;
+}
+
+.message-input {
+    background-color: transparent;
+    margin-top: 57px;
+  width: 346px;
+  height: 188px;
+  border: 2px solid #FFFCF2;
+  border-radius: 8px;
+  color: #000000;
+  font-size: 16px;
+  resize: none;
+}
+
+.contact-form button {
+  background-color: transparent;
+  color: #000000b9;
+  padding: 7px;
+  border: none;
+  border-radius: 2px;
+  font-family: 'Lora', serif;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  align-self: flex-end;
+}
+
+.contact-form button:hover {
+  background-color: #7fa5b1b6;
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

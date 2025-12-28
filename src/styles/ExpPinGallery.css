@@ -1,0 +1,121 @@
+/* PinterestGallery.css */
+
+.pinterest-gallery-container {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.pinterest-grid {
+  column-count: 4;
+  column-gap: 15px;
+  width: 100%;
+}
+
+.pinterest-item {
+  break-inside: avoid;
+  margin-bottom: 15px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.pinterest-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.pinterest-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  transition: filter 0.3s ease;
+}
+
+.pinterest-item:hover img {
+  filter: brightness(0.9);
+}
+
+/* Modal styles */
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.modal-content img {
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+.close-button {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  z-index: 10000;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  color: #ccc;
+}
+
+@media (max-width: 1400px) {
+  .pinterest-grid {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 1024px) {
+  .pinterest-grid {
+    column-count: 3;
+    column-gap: 12px;
+  }
+  
+  .pinterest-item {
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pinterest-grid {
+    column-count: 2;
+    column-gap: 10px;
+  }
+  
+  .pinterest-item {
+    margin-bottom: 10px;
+    border-radius: 12px;
+  }
+  
+  .pinterest-item img {
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pinterest-grid {
+    column-count: 1;
+  }
+}

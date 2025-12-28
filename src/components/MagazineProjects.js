@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, Github, ExternalLink, Calendar, Tag } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Github, ExternalLink, Calendar, Tag, Wrench } from 'lucide-react';
 import '../styles/MagazineProjects.css';
 
 const projects = [
@@ -28,6 +28,17 @@ const projects = [
     demo: "#"
   }
 ];
+
+const DevelopmentInProgressPage = ({ pageNumber }) => (
+  <div className="project-page">
+    <div className="empty-state">
+      <Wrench size={64} color="#54828f" />
+      <h2>Development Still in Progress</h2>
+      <p>This portfolio is currently being built. Check back soon for exciting projects!</p>
+      <div className="page-number">{pageNumber}</div>
+    </div>
+  </div>
+);
 
 const ProjectContent = ({ project, pageNumber }) => (
   <div className="project-page">
@@ -79,8 +90,14 @@ const MagazineProjects = ({ coverImage }) => {
   const [currentPage, setCurrentPage] = useState(-1);
   const [isFlipping, setIsFlipping] = useState(false);
 
-  const augmentedProjects = [{ id: 'toc', toc: true, title: 'Table of Contents' }, ...projects];
-  const totalPages = augmentedProjects.length;
+  // Create pages with development in progress message
+  const developmentPages = [
+    { id: 'dev1', development: true },
+    { id: 'dev2', development: true },
+    { id: 'dev3', development: true }
+  ];
+  
+  const totalPages = developmentPages.length;
 
   const flipToPage = (page) => {
     if (!isFlipping && page >= -1 && page <= totalPages - 1) {
@@ -141,10 +158,10 @@ const MagazineProjects = ({ coverImage }) => {
               </div>
             </div>
 
-            {/* Project Pages */}
-            {augmentedProjects.map((project, index) => (
+            {/* Development Pages */}
+            {developmentPages.map((page, index) => (
               <div
-                key={project.id}
+                key={page.id}
                 className={`magazine-page ${
                   index === currentPage ? 'active' : index < currentPage ? 'flipped' : 'unflipped'
                 } ${isFlipping ? 'flipping' : ''}`}
@@ -158,29 +175,7 @@ const MagazineProjects = ({ coverImage }) => {
                     className="page-content right-page"
                     onClick={() => handlePageClick('right')}
                   >
-                    {project.toc ? (
-                      <div className="toc-list">
-                        <h2 className="project-title" style={{ marginBottom: '20px' }}>Projects</h2>
-                        <div className="toc-items">
-                          {projects.map((p, i) => (
-                            <button
-                              key={p.id}
-                              className="toc-item"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                flipToPage(i + 1);
-                              }}
-                              title={`Open ${p.title}`}
-                            >
-                              <span className="toc-title">{p.title}</span>
-                              <span className="toc-sub">{p.subtitle}</span>
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                    ) : (
-                      <ProjectContent project={project} pageNumber={index} />
-                    )}
+                    <DevelopmentInProgressPage pageNumber={index + 1} />
                   </div>
                 </div>
 
@@ -189,8 +184,8 @@ const MagazineProjects = ({ coverImage }) => {
                     className="page-content left-page"
                     onClick={() => handlePageClick('left')}
                   >
-                    {index > 0 && !augmentedProjects[index - 1].toc && (
-                      <ProjectContent project={augmentedProjects[index - 1]} pageNumber={index - 1} />
+                    {index > 0 && (
+                      <DevelopmentInProgressPage pageNumber={index} />
                     )}
                   </div>
                 </div>
@@ -211,9 +206,7 @@ const MagazineProjects = ({ coverImage }) => {
           </button>
 
           <div className="page-counter">
-            {projects.length === 0
-              ? 'Empty Portfolio'
-              : currentPage === -1
+            {currentPage === -1
               ? 'Cover'
               : `Page ${currentPage + 1} of ${totalPages}`}
           </div>

@@ -1,10 +1,31 @@
-body, html, #root {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-white);
 }
 
 .main-scroll-container {
   width: 100%;
-  overflow-x: hidden;
+  min-height: 100vh;
+  background-color: var(--color-white);
+  overflow-y: auto;
+  padding-top: 0; /* No padding needed since topbar is fixed */
+}
+
+/* Smooth scrolling for the entire app */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Each section takes full viewport */
+section {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Remove any default margins/padding */
+section > div {
+  margin: 0;
+  padding: 0;
 }

@@ -4,12 +4,12 @@ import '../styles/Footer.css';
 
 const Footer = () => {
    const socialLinks = [
-    { name: 'GitHub', url: 'https://github.com/yourusername', icon: Github },
-    { name: 'LinkedIn', url: 'https://linkedin.com/in/yourprofile', icon: Linkedin },
+    { name: 'GitHub', url: 'https://github.com/anaiysaa', icon: Github },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/anaiysaadeswal/', icon: Linkedin },
     /*{ name: 'Twitter', url: 'https://twitter.com/yourusername', icon: Twitter },
     { name: 'Instagram', url: 'https://instagram.com/yourusername', icon: Instagram }*/
-    { name: 'Email', url: 'mailto:your.email@example.com', icon: Mail },
-    { name: 'Resume', url: 'https://yourwebsite.com', icon: FileMinus}
+    { name: 'Email', url: 'mailto:adeswal@purdue.edu', icon: Mail },
+    { name: 'Resume', url: '', icon: FileMinus}
   ];
 
   const currentYear = new Date().getFullYear();
@@ -44,7 +44,7 @@ const Footer = () => {
           <div className="footer-copy">
             <span>© {currentYear}  - Made with</span>
             <Heart size={16} className="footer-heart" />
-            <span> and lots of coffee</span>
+            <span> and a lot of vanilla bean cold brew from Saxby's</span>
           </div>
         </div>
 

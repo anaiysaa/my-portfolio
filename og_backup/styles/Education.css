@@ -1,0 +1,321 @@
+/* Education.css */
+
+h1 {
+  font-size: 30px;
+  font-weight: normal;
+  margin: 0;
+}
+
+h2 {
+  font-size: 35px;
+  font-weight: normal;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 15px 0 8px 0;
+  color: #EAF2F7;
+  font-family: 'Lora', serif;
+}
+
+h5 {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 10px 0 5px 0;
+  color: #DCE9EE;
+  font-family: 'Lora', serif;
+}
+
+b {
+  font-family: 'Linotype Feltpen', sans-serif;
+  font-weight: normal;
+  font-size: 20px;
+}
+
+a {
+  transform: scale(1.02);
+  transition: transform 0.3s ease, border-bottom 0.3s ease;
+  text-decoration: none;
+}
+
+a:hover {
+  transform: scale(1.05);
+  text-decoration: none;
+}
+
+.education-wrapper {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a151b 0%, #12323e 45%, #2a6b80 100%);
+  font-family: 'Lora', serif;
+}
+
+.education-panel-full {
+  width: 100%;
+  padding: 40px 65px;
+  font-family: "Tan Mon Cheri", serif;
+  font-size: 35px;
+  color: #F2F7FA;
+}
+
+.education-boxes-container {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+  align-items: flex-start;
+}
+
+.education-left {
+  flex: 2;
+  min-width: 0;
+}
+
+.education-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+.education-box {
+  background: rgba(177, 205, 213, 0.1);
+  border: 1px solid rgba(234, 242, 247, 0.3);
+  border-radius: 12px;
+  padding: 25px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.purdue-box {
+  max-height: 660px;
+  max-width: 600px;
+}
+
+.high-school-box {
+  max-height: 325px;
+ min-width: 600px;
+ margin-left: -200px;
+}
+
+.cmu-box {
+  max-height: 325px;
+ min-width: 600px;
+ margin-left: -200px;
+}
+
+.education-box:hover {
+  background: rgba(177, 205, 213, 0.15);
+  border-color: rgba(234, 242, 247, 0.5);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.education-header {
+  border-bottom: 1px solid rgba(234, 242, 247, 0.2);
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.education-date {
+  font-family: "Linotype Feltpen", sans-serif;
+  font-size: 18px;
+  color: #B1CDD5;
+  margin-bottom: 8px;
+}
+
+.education-school-link {
+  display: block;
+  font-size: 24px;
+  font-weight: 600;
+  color: #F2F7FA;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+  margin-left: 4px;
+}
+
+.education-school-link:hover {
+  color: #DCE9EE;
+}
+
+.education-degree {
+  font-size: 18px;
+  color: #EAF2F7;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.education-gpa {
+  font-size: 16px;
+  color: #B1CDD5;
+  font-style: italic;
+  margin-bottom: 6px;
+}
+
+.education-location {
+  font-size: 14px;
+  color: #B1CDD5;
+}
+
+.education-section {
+  margin-bottom: 20px;
+}
+
+.courses-grid {
+  display: flex;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+.course-category {
+  flex: 1;
+  margin-bottom: 15px;
+}
+
+.education-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.education-tag {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'Lora', serif !important;
+  transition: all 0.3s ease;
+  border: 1px solid;
+}
+
+.education-tag:hover {
+  transform: scale(1.05);
+}
+
+.concentration-tag {
+  background-color: rgba(255, 193, 7, 0.2);
+  color: #F2F7FA;
+  border-color: rgba(255, 193, 7, 0.6);
+}
+
+.concentration-tag:hover {
+  background-color: rgba(255, 193, 7, 0.3);
+}
+
+.organization-tag {
+  background-color: rgba(152, 216, 200, 0.2);
+  color: #F2F7FA;
+  border-color: rgba(152, 216, 200, 0.6);
+}
+
+.organization-tag:hover {
+  background-color: rgba(152, 216, 200, 0.3);
+}
+
+.course-list {
+  margin-top: 8px;
+  margin-left: 10px;
+}
+
+.course-item {
+  color: #EAF2F7;
+  font-size: 14px;
+  font-family: 'Lora', serif !important;
+  margin-bottom: 4px;
+  padding-left: 12px;
+  position: relative;
+  line-height: 1.4;
+}
+
+.course-item::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: rgba(177, 205, 213, 0.8);
+  font-weight: bold;
+}
+
+.additional-program {
+  background-color: rgba(177, 205, 213, 0.15);
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+  color: #EAF2F7;
+  border-left: 3px solid rgba(255, 193, 7, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .education-boxes-container {
+    gap: 30px;
+  }
+  
+  .education-box {
+    min-width: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .education-panel-full {
+    padding: 20px;
+  }
+  
+  .education-boxes-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .education-left, .education-right {
+    flex: unset;
+  }
+  
+  .education-right {
+    gap: 15px;
+  }
+  
+  .education-box {
+    padding: 20px;
+  }
+  
+  .courses-grid {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .education-school-link {
+    font-size: 20px;
+  }
+  
+  .education-degree {
+    font-size: 16px;
+  }
+  
+  h4 {
+    font-size: 16px;
+  }
+  
+  h5 {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .education-tag {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+  
+  .education-school-link {
+    font-size: 18px;
+  }
+  
+  .education-degree {
+    font-size: 14px;
+  }
+}
