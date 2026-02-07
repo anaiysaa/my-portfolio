@@ -5,10 +5,12 @@ import '../styles/Projects.css';
 import hairIQ from '../assets/project_slides/HairIQ.png';
 import hairIQCover from '../assets/project_slides/HairIQ_Cover.jpg';
 import datamineCover from '../assets/project_slides/datamineCover.png';
+import datamineImage from '../assets/project_slides/MCS.png';
 import portfolioCover from '../assets/project_slides/portfolioCover.png';
 import workwayvesCover from '../assets/project_slides/workwayvesCover.png';
 import boilerchatCover from '../assets/project_slides/BoilerChatCover.png';
 import vipCover from '../assets/project_slides/vipCover.png';
+import Vip from '../assets/project_slides/VIP.png';
 import workwayvesImage from '../assets/project_slides/workwayves.png';
 
 function Projects() {
@@ -20,8 +22,8 @@ function Projects() {
       id: 'vip', 
       name: 'VIP', 
       description: 'Vertically Integrated Projects - Description here...',
-      details: 'Full details about VIP project, technologies used, your role, achievements, etc.',
-      image: 'none',
+      details: 'a.',
+      image: Vip,
       cover: vipCover,
       links: 'none',
       github: 'none'
@@ -30,7 +32,7 @@ function Projects() {
       id: 'website', 
       name: 'this website!', 
       description: 'Personal portfolio website',
-      details: 'Built with React, featuring custom animations and responsive design...',
+      details: 'still in development.... more info coming soon!',
       image: 'none',
       cover: portfolioCover,
       links: 'none',
@@ -41,7 +43,7 @@ function Projects() {
       name: 'Datamine', 
       description: 'Data mining and analysis project',
       details: 'Currently in development, more information coming soon...',
-      image: 'none',
+      image: datamineImage,
       cover: datamineCover,
       links: 'none',
       github: 'none'
@@ -50,7 +52,7 @@ function Projects() {
       id: 'workwayves', 
       name: 'workwayves', 
       description: 'Workplace management solution',
-      details: 'Full details about workwayves project...',
+      details: 'Full details about project...',
       image: workwayvesImage,
       cover: workwayvesCover,
       links: 'https://gamma.app/docs/WorkWayves-Technical-Documentation-zji79naosb6agsd?mode=doc',
@@ -60,7 +62,7 @@ function Projects() {
       id: 'Hair-IQ', 
       name: 'Hair-IQ', 
       description: 'pitch competition',
-      details: 'Full details about boilerchat project...',
+      details: 'Full details about ',
       image: hairIQ,
       cover: hairIQCover,
       links: 'none',
@@ -70,7 +72,7 @@ function Projects() {
       id: 'boilerchat', 
       name: 'boilerchat', 
       description: 'Chat application for students',
-      details: 'Full details about boilerchat project...',
+      details: 'more information coming soon...',
       image: 'none',
       cover: boilerchatCover,
       links: 'none',
