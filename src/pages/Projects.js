@@ -5,10 +5,8 @@ import '../styles/Projects.css';
 import hairIQ from '../assets/project_slides/HairIQ.png';
 import hairIQCover from '../assets/project_slides/HairIQ_Cover.jpg';
 import datamineCover from '../assets/project_slides/datamineCover.png';
-import datamineImage from '../assets/project_slides/MCS.png';
-import portfolioCover from '../assets/project_slides/portfolioCover.png';
+import datamineImage from '../assets/project_slides/J&JPoster.png';
 import workwayvesCover from '../assets/project_slides/workwayvesCover.png';
-import boilerchatCover from '../assets/project_slides/BoilerChatCover.png';
 import vipCover from '../assets/project_slides/vipCover.png';
 import Vip from '../assets/project_slides/VIP.png';
 import workwayvesImage from '../assets/project_slides/workwayves.png';
@@ -28,17 +26,7 @@ function Projects() {
       links: 'none',
       github: 'none'
     },
-    { 
-      id: 'website', 
-      name: 'this website!', 
-      description: 'Personal portfolio website',
-      details: 'still in development.... more info coming soon!',
-      image: 'none',
-      cover: portfolioCover,
-      links: 'none',
-      github: 'none'
-    },
-    { 
+    {
       id: 'datamine', 
       name: 'Datamine', 
       description: 'Data mining and analysis project',
@@ -58,9 +46,9 @@ function Projects() {
       links: 'https://gamma.app/docs/WorkWayves-Technical-Documentation-zji79naosb6agsd?mode=doc',
       github: 'none'
     },
-    { 
-      id: 'Hair-IQ', 
-      name: 'Hair-IQ', 
+    {
+      id: 'Hair-IQ',
+      name: 'Hair-IQ',
       description: 'pitch competition',
       details: 'Full details about ',
       image: hairIQ,
@@ -68,16 +56,30 @@ function Projects() {
       links: 'none',
       github: 'none'
     },
-    { 
-      id: 'boilerchat', 
-      name: 'boilerchat', 
-      description: 'Chat application for students',
-      details: 'more information coming soon...',
+    {
+      id: 'mia',
+      name: 'MIA',
+      description: 'TinyML Personal Desk Assistant',
+      details: 'Designing and training a binary audio classification CNN from scratch for custom wake word detection. Deploying a quantized TFLite model on embedded ARM hardware (Raspberry Pi) alongside offline speech recognition, intent classification, and live API integrations for calendar and personal notification services.',
+      tech: 'Python · PyTorch · TFLite · Raspberry Pi',
+      date: 'May 2026 – Present',
       image: 'none',
-      cover: boilerchatCover,
+      cover: 'none',
       links: 'none',
       github: 'none'
-    }
+    },
+    {
+      id: 'ootd',
+      name: 'OOTD',
+      description: 'Virtual Closet App',
+      details: 'Building a full-stack wardrobe management app enabling users to catalog clothing, build outfits, and organize mood boards with cloud storage. Integrating AI-powered image analysis and web scraping for automated personalized clothing recommendations and best-price search across retailers and resellers.',
+      tech: 'Python · React · FastAPI · Supabase',
+      date: 'April 2026 – Present',
+      image: 'none',
+      cover: 'none',
+      links: 'none',
+      github: 'none'
+    },
   ];
 
   const goToSlide = (index) => {
@@ -149,7 +151,10 @@ function Projects() {
           ) : (
             <div className="project-detail-content">
               <h2 className="project-detail-title">{project.name}</h2>
+              <p className="project-detail-description" style={{ fontStyle: 'italic', fontSize: '18px', marginBottom: '6px' }}>{project.description}</p>
+              {project.date && <p style={{ fontFamily: 'Cutive Mono', fontSize: '13px', marginBottom: '14px', color: '#555' }}>{project.date}</p>}
               <p className="project-detail-description">{project.details}</p>
+              {project.tech && <p style={{ fontFamily: 'Cutive Mono', fontSize: '13px', marginTop: '16px', color: '#333' }}>{project.tech}</p>}
               <button className="back-button" onClick={() => goToSlide(0)}>
                 ← Back to All Projects
               </button>

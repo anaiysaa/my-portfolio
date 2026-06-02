@@ -6,12 +6,14 @@ import { Github, Linkedin, Mail, FileMinus } from 'lucide-react';
 
 import pic1 from '../assets/images/aboutme.png';
 import strip from '../assets/images/aboutmestrip.png';
+import resume from '../assets/AnaiysaaResume2026.pdf';
+import headshot from '../assets/images/headshot.JPEG';
 
 const socialLinks = [
     { name: 'GitHub', url: 'https://github.com/anaiysaa', icon: Github },
     { name: 'LinkedIn', url: 'https://www.linkedin.com/in/anaiysaadeswal/', icon: Linkedin },
     { name: 'Email', url: 'mailto:adeswal@purdue.edu', icon: Mail },
-    { name: 'Resume', url: '', icon: FileMinus}
+    { name: 'Resume', url: resume, icon: FileMinus}
   ];
 
 function About() {
@@ -32,7 +34,7 @@ function About() {
             data-aos="fade-up"
             data-aos-delay="200" />
           <img 
-            src={pic1} 
+            src={headshot} 
             className="postcard" 
             data-aos="fade-up"
             data-aos-delay="200"
@@ -42,9 +44,9 @@ function About() {
             data-aos="fade-up"
             data-aos-delay="400"
           >
-            <div className="about-header">Dearest Reader,</div>  
+            <div className="about-header">Hi, I'm Anaiysaa!</div>  
             <p>
-              Hi! I’m Anaiysaa Deswal, a sophomore at Purdue University studying Computer Science and passionate about building technology that creates meaningful impact. I am specializing in Artificial Intelligence & Machine Learning, Computational Systems Engineering, and Software Engineering, with a strong interest in projects that bring together data, AI, and complex computing systems to solve real-world challenges. <br></br><br></br>
+              I'm a sophomore at Purdue University studying Computer Science and passionate about building technology that creates meaningful impact. I am specializing in Artificial Intelligence & Machine Learning, Computational Systems Engineering, and Software Engineering, with a strong interest in projects that bring together data, AI, and complex computing systems to solve real-world challenges. <br></br><br></br>
               Alongside my technical interests, I am pursuing a certificate in Entrepreneurship and Innovation, where I combine creative problem-solving with leadership and business strategy. These experiences have strengthened my ability to guide teams, give back through volunteering  and mentorship, and make a lasting impact beyond the screen. <br></br><br></br>
               Outside of academics, I enjoy playing and listening to music, exploring art and design, and swimming — all of which help me stay inspired, balanced, and refreshed. Here’s a look into my journey so far...<br></br><br></br>
             </p>

@@ -1,60 +1,42 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import '../styles/ExpPinGallery.css';
 
-function Gallery({ folderPath }) {
-  const [images, setImages] = useState([]);
+function Gallery({ images = [] }) {
   const [selectedImage, setSelectedImage] = useState(null);
 
-  useEffect(() => {
-    // Import all images from the specified folder
-    // Using webpack's require.context to dynamically import images
-    const importAll = (r) => {
-      return r.keys().map(r);
-    };
+  if (!images.length) return null;
 
-    try {
-      // This will import all images from your specified folder
-      // Adjust the path based on your folder structure
-      console.log(folderPath);
-      const imageContext = require.context(folderPath, false, /\.(png|jpe?g|svg|gif|webp)$/);
-      const imageList = importAll(imageContext);
-      setImages(imageList);
-    } catch (error) {
-      console.error('Error loading images:', error);
-    }
-  }, [folderPath]);
-
-  const openModal = (image) => {
-    setSelectedImage(image);
-  };
-
-  const closeModal = () => {
-    setSelectedImage(null);
+  const count = images.length;
+  const gridStyle = {
+    display: 'grid',
+    gap: '8px',
+    gridTemplateColumns: count === 1 ? '1fr' : count === 2 ? '1fr 1fr' : count === 3 ? '1fr 1fr 1fr' : 'repeat(2, 1fr)',
   };
 
   return (
     <div className="pinterest-gallery-container">
-      <div className="pinterest-grid">
+      <div style={gridStyle}>
         {images.map((image, index) => (
-          <div 
-            key={index} 
+          <div
+            key={index}
             className="pinterest-item"
-            onClick={() => openModal(image)}
+            onClick={() => setSelectedImage(image)}
+            style={{ aspectRatio: count === 1 ? 'auto' : '1 / 1', overflow: 'hidden' }}
           >
-            <img 
-              src={image} 
+            <img
+              src={image}
               alt={`Gallery item ${index + 1}`}
               loading="lazy"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
             />
           </div>
         ))}
       </div>
 
-      {/* Modal for full-size image */}
       {selectedImage && (
-        <div className="image-modal" onClick={closeModal}>
+        <div className="image-modal" onClick={() => setSelectedImage(null)}>
           <div className="modal-content">
-            <span className="close-button" onClick={closeModal}>&times;</span>
+            <span className="close-button" onClick={() => setSelectedImage(null)}>&times;</span>
             <img src={selectedImage} alt="Full size" />
           </div>
         </div>

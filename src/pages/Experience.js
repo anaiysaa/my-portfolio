@@ -3,46 +3,59 @@ import '../styles/Experience.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import NWNL from '../assets/images/NWNL.png';
 import Gallery from '../components/ExpPinGallery';
 
-const experiences = [
+// EV Grand Prix photos
+import EV1 from '../assets/experience_gallery/GrandPrix/EV.JPEG';
+import EV2 from '../assets/experience_gallery/GrandPrix/EV2.JPEG';
+import EV5 from '../assets/experience_gallery/GrandPrix/EV5.JPEG';
+import EV6 from '../assets/experience_gallery/GrandPrix/EV6.JPEG';
+
+// J&J / Data Mine photos
+import JJ1 from '../assets/experience_gallery/DataMine/J&J.JPEG';
+
+// Northwest Nuclear Labs photos
+import NWNL1 from '../assets/experience_gallery/NWNL/NWNL1.jpg';
+import NWNL2 from '../assets/experience_gallery/NWNL/NWNL2.JPEG';
+import NWNL3 from '../assets/experience_gallery/NWNL/NWNL3.JPEG';
+
+const technicalExperiences = [
   {
     id: 1,
-    dateTotal: 'August 2025 - Present',
+    dateTotal: 'August 2025 - April 2026',
     title: 'MCS Developer',
     company: 'Johnson & Johnson + Purdue Data Mine',
-    companyDesc: 'Still in progress... more information coming soon!',
+    companyDesc: 'The Purdue Data Mine Corporate Partners program pairs student teams with industry sponsors to solve real-world data science and engineering challenges.',
     location: '📍West Lafayette, IN',
-    link: 'https://crp.the-examples-book.com/mcs-363/',
-    skills: ['R Shiney', 'Statistical Modeling', 'Simulation', 'Data Analysis'],
+    link: 'https://datamine.purdue.edu/johnson-johnson/',
+    skills: ['React', 'Python', 'Monte Carlo Simulation', 'Generative AI', 'Statistical Modeling', 'R Shiny', 'Data Analysis', 'Agile'],
     roles: [
       {
         title: 'MCS Developer',
-        date: 'August 2025 - Present',
-        description: 'Developing an interactive R Shiny application to simulate, plan, and forecast clinical trial patient enrollment. Integrating statistical modeling and simulation-based methodologies to improve recruitment forecasting accuracy.'
+        date: 'August 2025 - April 2026',
+        description: '- Built a Monte Carlo simulation web application to probabilistically forecast clinical trial enrollment timelines across global sites, improving forecasting accuracy to reduce trial delays.\n - The application integrates Monte Carlo simulations and generative AI to estimate patient enrollment rates, site dropouts, trial timelines, and more — enabling trial managers to optimize resource allocation and reduce delays.\n - Built an intuitive interactive interface for researchers to explore projections and automatically generate reports, bridging the gap between complex statistical modeling and practical trial operation planning.'
       }
     ],
     newsLinks: [],
-    collage: ''
+    collage: [JJ1]
   },
   {
     id: 2,
-    dateTotal: 'August 2025 - December 2025',
-    title: 'Undergraduate Researcher',
+    dateTotal: 'August 2025 - January 2026',
+    title: 'PPML Undergraduate Researcher',
     company: 'Purdue Vertically Integrated Projects',
-    companyDesc: 'Still in progress... more information coming soon!',
+    companyDesc: 'The Privacy-Preserving Machine Learning (PPML) VIP group integrates multiple PPML research repositories into a single application, enabling clients to use models while protecting sensitive data and quantifying training data vulnerability.',
     location: '📍West Lafayette, IN',
-    link: '',
-    skills: ['Python', 'C', 'Machine Learning'],
+    link: 'https://engineering.purdue.edu/VIP',
+    skills: ['Python', 'TensorFlow', 'PyTorch', 'Machine Learning', 'Influence Functions', 'GPU Computing', 'MNIST', 'CIFAR-10', 'ResNet'],
     roles: [
       {
-        title: 'Undergraduate Research Assistant',
-        date: 'August 2025 - Present',
-        description: 'Building privacy-preserving Machine Learning application using cryptography and GPU inference computations, aiming to allow clients to use models without revealing inputs or model parameters.'
+        title: 'Undergraduate Researcher',
+        date: 'August 2025 - January 2026',
+        description: '- Extended influence function research for privacy-preserving ML, adapting TensorFlow pipelines to calculate training-point influence and loss sensitivity across non-convex models.\n - Reproduced and extended Blackbox influence function studies across MNIST, CIFAR-10, and ResNet20 datasets — estimating how individual training points impact model predictions using gradients and Hessian vectors.\n - Integrated research into the Landseer multi-stage ML defense pipeline to quantify training-set attack susceptibility, and optimized GPU-based training times and inference pipelines.'
       }
     ],
-    newsLinks: [],
+    newsLinks: ['https://github.com/anaiysaa/BlackBox_InfluenceFunctions'],
     collage: ''
   },
   {
@@ -85,12 +98,12 @@ const experiences = [
   },
   {
     id: 5,
-    dateTotal: 'February 2025 - Present',
+    dateTotal: 'February 2025 - May 2025',
     title: 'Operations Member',
     company: 'Purdue Vertically Integrated Projects - Lady Elizabeth EV Kart Team + Toyota',
     companyDesc: 'Lady Elizabeth is one of three EV Grand Prix kart teams for the Mitch Daniels School Of Business, Integrated Business Engineering Program',
     location: '📍West Lafayette, Indiana',
-    link: 'https://business.purdue.edu/centers/dcmme/experiential-learning/ibe-ev-gokart/home.php',
+    link: 'https://engineering.purdue.edu/VIP',
     skills: ['Electrical Systems', 'Mechanical Systems', 'Teamwork', 'Problem Solving'],
     roles: [
       {
@@ -104,7 +117,7 @@ const experiences = [
       'https://www.linkedin.com/posts/purduebusiness_lady-elizabeth-ugcPost-7320108834809671680-afbS?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD-AyMcBvzzO54CXPpzeTEW0Nb2SOv-RGYM',
       'https://www.linkedin.com/posts/dauch-center-for-the-management-of-manufacturing-enterprises_dauchcenter-womeninstem-vipgokart-ugcPost-7316523152736407553-XP3z?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD-AyMcBvzzO54CXPpzeTEW0Nb2SOv-RGYM'
     ],
-    collage: '..assets/experience_gallery/GrandPrix',
+    collage: [EV1, EV2, EV5, EV6],
   },
   {
     id: 6,
@@ -113,17 +126,44 @@ const experiences = [
     company: 'Northwest Nuclear Laboratories',
     companyDesc: '',
     location: '📍Federal Way, WA',
-    link: 'https://www.nwnlabs.org/',
+    link: '',
     skills: ['C++', 'Azure', 'SQL', 'Electrical Systems', 'Data Acquisition', 'LabJack', 'DAQFactory'],
     roles: [
       {
         title: 'Student Research Technician',
         date: 'February 2022 - June 2024',
-        description: '- Researched new plasma production through nuclear fusion, working towards increasing efficiency of energy production. \n - Worked on a new nuclear reactor design based around thermionic emission mitigation and sporadic electrical output mitigation. \n - Updated and developing nuclear reactor telemetry, which includes data acquisition and display through DAQfactory and LabJack software, stored on Azure data storage.'
+        description: '- Engineered data pipelines (DAQFactory & Azure) for reactor telemetry, accelerating research analysis.\n - Built LabJack control systems managing thermionic emission, plasma levels, and radiation output for BCNT research.\n - Worked on a nuclear reactor design focused on thermionic emission mitigation and sporadic electrical output mitigation.'
       }
     ],
     newsLinks: [],
-    collage: '',
+    collage: [NWNL1, NWNL2, NWNL3],
+  },
+];
+
+const leadershipExperiences = [
+  {
+    id: 8,
+    dateTotal: 'May 2026 - Present',
+    title: 'CS Team Lead & Social Media Liaison',
+    company: 'Purdue Women in Science Program (WiSP)',
+    companyDesc: 'WiSP is a Purdue program dedicated to supporting and empowering women in STEM through community, mentorship, and professional development.',
+    location: '📍West Lafayette, IN',
+    link: 'https://www.purdue.edu/science/wisp/',
+    skills: ['Leadership', 'Event Planning', 'Mentorship', 'Social Media', 'Marketing', 'Outreach'],
+    roles: [
+      {
+        title: 'Computer Science Team Lead & Social Media Liaison',
+        date: 'May 2026 - Present',
+        description: '- Planning events in educational, professional, and social development for 200+ students in the 2026–2027 cohort.\n- Managing professional speaker recruitment and alumni outreach, as well as mentor training.\n- Working with Purdue College of Science marketing department to oversee Social Media and Newsletter committees; expanding program reach, brand awareness, and highlighting member achievements.'
+      },
+      {
+        title: 'Mentor & Social Board Member',
+        date: 'August 2025 - May 2026',
+        description: '- Organized 8+ community-building events with the Social Board for 200+ WiSP participants in 2025–2026.\n- Mentored first-year STEM students, providing academic guidance and career support.'
+      }
+    ],
+    newsLinks: [],
+    collage: ''
   },
   {
     id: 7,
@@ -133,7 +173,7 @@ const experiences = [
     companyDesc: 'Women Advancing Tomorrows Technologists (WATT) is a non-profit dedicated to introducing girls to computer science at a young age.',
     location: '📍Seattle, WA',
     link: 'https://www.wattcoding.com/',
-    skills: ['Team Mangement','HTML', 'CSS', 'JavaScript', 'Python', 'Java'],
+    skills: ['Team Management', 'HTML', 'CSS', 'JavaScript', 'Python', 'Java'],
     roles: [
       {
         title: 'Student Advisory Board Member',
@@ -178,8 +218,11 @@ function Experience() {
         <h2>Experience</h2>
 
         <div className="timeline-container">
+          <div className="section-divider">
+            <span className="section-divider-label">Technical Experience</span>
+          </div>
           <div className="timeline">
-            {experiences.map((exp) => (
+            {technicalExperiences.map((exp) => (
               <div
                 className="timeline-item"
                 key={exp.id}
@@ -212,6 +255,40 @@ function Experience() {
               </div>
             ))}
           </div>
+
+          <div className="section-divider">
+            <span className="section-divider-label">Leadership & Volunteering</span>
+          </div>
+
+          <div className="timeline">
+            {leadershipExperiences.map((exp) => (
+              <div
+                className="timeline-item"
+                key={exp.id}
+                data-aos="fade-up"
+              >
+                <div className="timeline-date">{exp.dateTotal}</div>
+                <div className="timeline-title-wrapper" onClick={() => setActivePopup(exp)}>
+                  <div className="timeline-title">{exp.title}</div>
+                  <a
+                    href={exp.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="timeline-company-link"
+                  >
+                    {exp.company.split('\n').map((line, i) => (
+                      <span key={i}>{line}<br /></span>
+                    ))}
+                  </a>
+                  <div className="experience-skills">
+                    {exp.skills.map((skill, i) => (
+                      <span key={i} className="skill-bubble">{skill}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -221,11 +298,8 @@ function Experience() {
           onClick={handleClose}
         >
           <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-          <div className = "top">
-          <div className = "left">
-                <Gallery folderPath = {(activePopup.collage)} />
-          </div>
-            <div className = "right">
+          <div className="top">
+            <div className="right full-width">
             <h1>
               <a
                 href={activePopup.link}
@@ -260,8 +334,8 @@ function Experience() {
                     fontSize: '20px',
                   }}
                 >
-                  <span>{role.title}</span>
-                  <span style={{ fontFamily: 'Cutive Mono', fontSize: '15px', marginTop: '3px',}}>{role.date}</span>
+                  <span style={{ fontSize: '20px' }}>{role.title}</span>
+                  <span style={{ fontFamily: 'Cutive Mono', fontSize: '14px', marginTop: '4px' }}>{role.date}</span>
                 </div>
                 <div style={{ marginTop: '10px' }}>
                   {role.description.split('\n').map((line, index) => (
@@ -283,6 +357,11 @@ function Experience() {
               ))}
             </div>
           </div>
+          {activePopup.collage?.length > 0 && (
+            <div className="left">
+              <Gallery images={activePopup.collage} />
+            </div>
+          )}
           </div>
           {activePopup.newsLinks?.length > 0 && (
               <p style={{ fontSize: '20px', fontFamily: 'Old Standard TT', }}>

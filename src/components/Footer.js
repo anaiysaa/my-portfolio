@@ -23,7 +23,7 @@ const Footer = () => {
             Anaiysaa note* make a tagline here!
         </p>
 
-         */}
+         */}{/*
         <div className="social-links">
           {socialLinks.map((social) => {
             const IconComponent = social.icon;
@@ -33,7 +33,7 @@ const Footer = () => {
               </a>
             );
           })}
-        </div>
+        </div>*/}
 
         <div className="footer-divider"></div>
 
