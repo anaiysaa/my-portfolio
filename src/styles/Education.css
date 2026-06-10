@@ -1,40 +1,42 @@
 /* Education.css */
 
-h1 {
-  font-size: 30px;
+/* Scoped overrides — only inside education boxes */
+.education-box h4 {
+  font-family: 'Cutive Mono', monospace;
+  font-size: clamp(13px, 1.1vw, 16px);
   font-weight: normal;
-  margin: 0;
-}
-
-a{font-size: 18px;
-  font-family: 'old standard tt', serif;
-  color: black;}
-  
-h2 {
-  font-size: 35px;
-  font-weight: normal;
-}
-
-h4 {
-  font-size: 18px;
-  font-weight: 450;
-  margin: 15px 0 8px 0;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: black;
-  font-family: 'Lora', serif;
+  margin: 18px 0 8px 0;
 }
 
-h5 {
-  font-size: 16px;
+.education-box h5 {
+  font-family: 'Old Standard TT', serif;
+  font-size: clamp(16px, 1.4vw, 20px);
   font-weight: 500;
   margin: 10px 0 5px 0;
   color: black;
-  font-family: 'Lora', serif;
 }
 
-b {
-  font-family: 'Linotype Feltpen', sans-serif;
+.education-box b {
+  font-family: 'Cutive Mono', monospace;
   font-weight: normal;
-  font-size: 18px;
+  font-size: clamp(14px, 1.2vw, 16px);
+  color: rgba(18, 17, 17, 0.85);
+}
+
+.education-box a {
+  font-size: inherit;
+  font-family: 'Old Standard TT', serif;
+  color: var(--color-rosewood);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.education-box a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
 }
 
 .education-wrapper {
@@ -45,22 +47,28 @@ b {
 }
 
 .education-panel-full {
-  flex: 1;
-  width: 50%;
+  flex: 1 1 45%;
+  min-width: 0;
+  min-height: 100vh;
   padding-top: 50px;
-  padding-left: 40px;
-  font-size: 75px;
+  padding-left: clamp(16px, 3vw, 40px);
+  padding-right: clamp(16px, 2vw, 30px);
+  padding-bottom: clamp(20px, 3vw, 48px);
+  font-size: clamp(40px, 5vw, 75px);
   color: var(--color-rosewood);
   font-family: 'Pinyon Script', cursive;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
   overflow-y: auto;
   scrollbar-width: none;
 }
 
 .pinterest-gallery-container {
-  flex: 1;
-  width: 60%;
+  flex: 1 1 55%;
+  min-width: 0;
   height: 100vh;
-  overflow-y: hidden;
+  overflow: hidden;
   position: sticky;
   top: 0;
   background: var(--color-white);
@@ -70,35 +78,47 @@ b {
 }
 
 .education-boxes-container {
-  display: left;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2vw, 28px);
+  min-height: 0;
+  margin: 0 clamp(8px, 1.5vw, 20px) clamp(8px, 1.5vw, 20px);
 }
 
 .education-left {
+  flex: 1;
   display: flex;
-  align-items: left;
-  flex: 2;
-  min-width: 0;
+  flex-direction: column;
+  min-height: 0;
 }
 
 .education-box {
+  flex: 1;
   background: transparent;
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  padding: 25px;
+  padding: clamp(24px, 3vw, 48px);
+  padding-top: clamp(28px, 3.5vw, 52px);
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
   width: 100%;
+  box-sizing: border-box;
+  font-family: 'Old Standard TT', serif;
+  font-size: clamp(16px, 1.5vw, 21px);
+  overflow-y: auto;
 }
 
 .purdue-box {
-  max-height: 325px;
-  max-width: 700px;
-  margin-bottom: 30px;
+  max-height: none;
+  max-width: 100%;
+  width: 100%;
 }
 
 .high-school-box {
-  max-height: 335px;
-  max-width: 700px;
+  max-height: none;
+  max-width: 100%;
+  width: 100%;
 }
 
 .education-box:hover {
@@ -109,67 +129,67 @@ b {
 }
 
 .education-header {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  padding-bottom: 10px;
-  margin-top: -45px;
-  margin-left: -10px;
-  color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  padding-bottom: 14px;
+  margin-bottom: 20px;
   font-family: 'Old Standard TT', serif;
+}
+
+.education-school-link {
+  font-weight: 600;
+  display: inline-block;
+  font-size: clamp(25px, 2.75vw, 38px);
+  color: var(--color-rosewood);
+  font-family: 'Old Standard TT', serif;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  line-height: 1.2;
+}
+
+.education-school-link:hover {
+  opacity: 0.75;
 }
 
 .education-date {
   font-family: "Cutive Mono", monospace;
-  font-size: 18px;
-  color: black;
-  margin-top: 47px;
-  margin-right: -10px;
-  float: right;
-  transition: color 0.3s ease;
-}
-
-.education-box:hover .education-date {
-  color: var(--color-rosewood);
-}
-
-.education-school-link {
-  font-weight: normal;
-  display: inline-block;
-  font-size: 24px;
-  font-weight: 600;
-  color: black;
-  font-family: 'Old Standard TT', serif;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  margin-left: 0;
-}
-
-.education-school-link:hover {
-  color: var(--color-rosewood);
+  font-size: clamp(14px, 1.25vw, 18px);
+  color: rgba(18, 17, 17, 0.45);
+  margin: 0;
 }
 
 .education-degree {
-  font-size: 18px;
+  font-size: clamp(18px, 1.75vw, 24px);
   color: black;
-  margin-bottom: 6px;
-  margin-top: -15px;
+  font-family: 'Old Standard TT', serif;
   font-weight: 500;
-  clear: both;
-  transition: color 0.3s ease;
+  margin: 2px 0 0;
+  line-height: 1.4;
 }
 
+.education-minors {
+  font-family: 'Old Standard TT', serif;
+  font-size: clamp(14px, 1.3vw, 18px);
+  color: black;
+  margin: 0;
+  line-height: 1.4;
+}
 
 .education-gpa {
-  font-size: 16px;
-  color: black;
-  font-style: italic;
-  margin-bottom: 6px;
-  transition: color 0.3s ease;
+  font-family: 'Cutive Mono', monospace;
+  font-size: clamp(14px, 1.25vw, 18px);
+  color: rgba(18, 17, 17, 0.45);
+  font-style: normal;
+  margin: 0;
 }
 
 .education-location {
-  font-size: 14px;
-  color: black;
-  transition: color 0.3s ease;
+  font-family: 'Cutive Mono', monospace;
+  font-size: clamp(14px, 1.25vw, 16px);
+  color: rgba(18, 17, 17, 0.8);
+  margin: 0;
 }
 
 
@@ -196,46 +216,22 @@ b {
 }
 
 .education-tag {
-  padding: 6px 12px;
+  background-color: rgba(177, 205, 213, 0.22);
+  padding: 5px 12px;
   border-radius: 20px;
-  font-size: 12px;
+  font-size: clamp(14px, 1.1vw, 16px);
   font-weight: normal;
-  font-family: 'old standard tt', serif;
-  transition: all 0.3s ease;
-  border: 1px solid black;
-  background-color: transparent;
+  font-family: 'Old Standard TT', serif;
+  transition: all 0.25s ease;
+  border: 1px solid rgba(0, 0, 0, 0.25);
   color: black;
 }
 
 .education-tag:hover {
-  transform: scale(1.05);
   background-color: var(--color-rosewood);
-  color: white;
   border-color: var(--color-rosewood);
-}
-
-.concentration-tag {
-  background-color: transparent;
-  color: black;
-  border-color: black;
-}
-
-.concentration-tag:hover {
-  background-color: var(--color-rosewood);
   color: white;
-  border-color: var(--color-rosewood);
-}
-
-.organization-tag {
-  background-color: transparent;
-  color: black;
-  border-color: black;
-}
-
-.organization-tag:hover {
-  background-color: var(--color-rosewood);
-  color: white;
-  border-color: var(--color-rosewood);
+  transform: translateY(-1px);
 }
 
 .course-list {
@@ -270,66 +266,35 @@ b {
   color: var(--color-rosewood);
 }
 
-.additional-program {
-  background-color: transparent;
-  padding: 12px 16px;
-  border-radius: 8px;
-  margin-top: 8px;
-  font-size: 14px;
-  color: black;
-  border-left: 3px solid black;
-  transition: all 0.3s ease;
-}
-
-.education-box:hover .additional-program {
-  border-left-color: var(--color-rosewood);
-  color: var(--color-rosewood);
-}
-
 .additional-programs {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
 }
 
 .additional-programs h4 {
-  margin-top: -10px;
-  margin-right: 12px;
+  margin: 0 8px 0 0;
 }
 
 .additional-programs a {
-  margin-top: -15px;
-  color: black;
+  color: var(--color-rosewood);
   text-decoration: none;
-  margin-right: 10px;
-}
-
-.additional-programs b{
-  font-family: 'Cutive Mono', monospace;
-  margin-top: -18px;
-  color: black;
-  text-decoration: none;
-
+  font-family: 'Old Standard TT', serif;
+  font-size: clamp(15px, 1.4vw, 19px);
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
 }
 
 .additional-programs a:hover {
+  opacity: 1;
   text-decoration: underline;
 }
 
-.additional-program {
-  background-color: transparent;
-  padding: 12px 16px;
-  border-radius: 8px;
-  margin-top: 8px;
-  font-size: 14px;
-  color: black;
-  border-left: 3px solid black;
-  transition: all 0.3s ease;
-}
-
-.education-box:hover .additional-program {
-  border-left-color: var(--color-rosewood);
-  color: var(--color-rosewood);
+.additional-programs b {
+  font-family: 'Cutive Mono', monospace;
+  color: rgba(18, 17, 17, 0.5);
 }
 
 .concentrations {
@@ -356,15 +321,34 @@ b {
   .education-boxes-container {
     gap: 30px;
   }
-  
   .education-box {
-    min-width: 350px;
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+/* Stack panels vertically on tablets/mobile */
+@media (max-width: 900px) {
+  .education-wrapper {
+    flex-direction: column;
+  }
+  .education-panel-full {
+    flex: none;
+    width: 100%;
+  }
+  .pinterest-gallery-container {
+    flex: none;
+    width: 100%;
+    height: 60vh;
+    position: relative;
+    top: auto;
   }
 }
 
 @media (max-width: 768px) {
   .education-panel-full {
     padding: 20px;
+    font-size: clamp(32px, 8vw, 56px);
   }
   
   .education-boxes-container {

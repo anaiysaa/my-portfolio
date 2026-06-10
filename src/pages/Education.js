@@ -8,12 +8,13 @@ const educationData = [
     id: 1,
     dateTotal: 'August 2024 - May 2028',
     school: 'Purdue University',
-    degree: 'B.S. Computer Science, Minors: Mathematics, Political Science, Entrepreneurship',
+    degree: 'B.S. Computer Science',
+    minors: 'Minors: Mathematics, Political Science, Entrepreneurship',
     gpa: 'GPA: 3.5',
     location: '📍West Lafayette, IN',
     link: 'https://www.purdue.edu/',
     concentrations: ['AI/Machine Learning', 'Computational Systems Engineering', 'Software Engineering'],
-    organizations: ['Women In Science Program - Mentor & Social Board', 'Data Mine - Corporate Partners', 'VIP Undergraduate Research', 'EV Grand Prix', 'Semester Honors + Deans List x2'],
+    organizations: ['Women In Science Program - Jandos Scholar', 'Data Mine - Corporate Partners', 'VIP Undergraduate Research', 'EV Grand Prix', 'Semester Honors + Deans List x2'],
     courses: {
       'Computer Science': [
         'Problem Solving & O-O Programming',
@@ -85,6 +86,7 @@ function Education() {
                 </a>
                 <div className="education-date">{educationData[0].dateTotal}</div>
                 <div className="education-degree">{educationData[0].degree}</div>
+                <div className="education-minors">{educationData[0].minors}</div>
                 <div className="education-gpa">{educationData[0].gpa}</div>
                 <div className="education-location">{educationData[0].location}</div>
               </div>

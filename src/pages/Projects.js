@@ -1,6 +1,8 @@
 // Projects.js
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import '../styles/Projects.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import hairIQ from '../assets/project_slides/HairIQ.png';
 import hairIQCover from '../assets/project_slides/HairIQ_Cover.jpg';
@@ -15,11 +17,16 @@ function Projects() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const scrollContainerRef = useRef(null);
 
+  useEffect(() => {
+    AOS.init({ duration: 700, offset: 40, once: true, easing: 'ease-out-cubic' });
+  }, []);
+
   const projects = [
-    { 
-      id: 'vip', 
-      name: 'VIP', 
+    {
+      id: 'vip',
+      name: 'VIP',
       description: 'Vertically Integrated Projects - Description here...',
+      tags: ['Research', 'Embedded Systems', 'Robotics', 'Team'],
       details: 'a.',
       image: Vip,
       cover: vipCover,
@@ -27,19 +34,21 @@ function Projects() {
       github: 'none'
     },
     {
-      id: 'datamine', 
-      name: 'Datamine', 
+      id: 'datamine',
+      name: 'Datamine',
       description: 'Data mining and analysis project',
+      tags: ['Data Science', 'Machine Learning', 'Python', 'Corporate Partners'],
       details: 'Currently in development, more information coming soon...',
       image: datamineImage,
       cover: datamineCover,
       links: 'none',
       github: 'none'
     },
-    { 
-      id: 'workwayves', 
-      name: 'workwayves', 
+    {
+      id: 'workwayves',
+      name: 'workwayves',
       description: 'Workplace management solution',
+      tags: ['Full Stack', 'SaaS', 'React', 'Entrepreneurship'],
       details: 'Full details about project...',
       image: workwayvesImage,
       cover: workwayvesCover,
@@ -50,6 +59,7 @@ function Projects() {
       id: 'Hair-IQ',
       name: 'Hair-IQ',
       description: 'pitch competition',
+      tags: ['AI', 'Pitch Competition', 'Product Design', 'Computer Vision'],
       details: 'Full details about ',
       image: hairIQ,
       cover: hairIQCover,
@@ -119,7 +129,7 @@ function Projects() {
       >
         {/* Slide 0: Grid of all projects */}
         <div className="project-slide grid-slide">
-          <div className="projects-grid">
+          <div className="projects-grid" data-aos="fade-up" data-aos-duration="800">
             {projects.map((project, index) => (
                 <div
                   key={project.id}
@@ -127,12 +137,25 @@ function Projects() {
                   onClick={() => goToSlide(index + 1)}
                 >
                   {project.cover !== "none" ? (
-                    <img src={project.cover} alt={`${project.name} cover`}
-                      className="project-cover-image" />
+                    <>
+                      <img src={project.cover} alt={`${project.name} cover`}
+                        className="project-cover-image" />
+                      <div className="project-card-overlay">
+                        <h3 className="project-card-overlay-title">{project.name}</h3>
+                        <div className="project-card-overlay-tags">
+                          {project.tags && project.tags.map((tag, i) => (
+                            <span key={i} className="project-overlay-tag">{tag}</span>
+                          ))}
+                        </div>
+                      </div>
+                    </>
                   ) : (
                     <>
                       <h3 className="project-card-title">{project.name}</h3>
                       <p className="project-card-description">{project.description}</p>
+                      {project.date && (
+                        <p className="project-card-date">{project.date}</p>
+                      )}
                     </>
                   )}
                 </div>

@@ -9,23 +9,46 @@
   min-height: 100vh;
   background-color: var(--color-white);
   overflow-y: auto;
-  padding-top: 0; /* No padding needed since topbar is fixed */
+  padding-top: 0;
 }
 
-/* Smooth scrolling for the entire app */
+/* ── Smooth scroll ── */
 html {
   scroll-behavior: smooth;
 }
 
-/* Each section takes full viewport */
+/* ── Sections ── */
 section {
   width: 100%;
   min-height: 100vh;
   position: relative;
+  /* Subtle divider between sections */
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
 }
 
-/* Remove any default margins/padding */
+section:first-child {
+  border-top: none;
+}
+
+/* Don't strip inner div padding — components set their own */
 section > div {
   margin: 0;
   padding: 0;
+}
+
+/* ── Section fade-in on scroll (AOS fallback) ── */
+@keyframes sectionFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* AOS override — snappier easing globally */
+[data-aos] {
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }

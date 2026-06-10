@@ -209,7 +209,7 @@ function Experience() {
   };
 
   useEffect(() => {
-    AOS.init({ duration: 1000, offset: 0, once: false});
+    AOS.init({ duration: 800, offset: 60, once: true, easing: 'ease-out-cubic' });
   }, []);
 
   return (
@@ -222,13 +222,13 @@ function Experience() {
             <span className="section-divider-label">Technical Experience</span>
           </div>
           <div className="timeline">
-            {technicalExperiences.map((exp) => (
+            {technicalExperiences.map((exp, idx) => (
               <div
                 className="timeline-item"
                 key={exp.id}
                 data-aos="fade-up"
+                data-aos-delay={idx * 60}
               >
-                <div className="timeline-date">{exp.dateTotal}</div>
                 <div className="timeline-title-wrapper" onClick={() => setActivePopup(exp)}>
                   <div className="timeline-title">{exp.title}</div>
                   <a
@@ -236,19 +236,14 @@ function Experience() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="timeline-company-link"
+                    onClick={e => e.stopPropagation()}
                   >
-                    {exp.company.split('\n').map((line, i) => (
-                      <span key={i}>
-                        {line}
-                        <br />
-                      </span>
-                    ))}
+                    {exp.company}
                   </a>
+                  <div className="timeline-date">{exp.dateTotal}</div>
                   <div className="experience-skills">
                     {exp.skills.map((skill, i) => (
-                      <span key={i} className="skill-bubble">
-                        {skill}
-                      </span>
+                      <span key={i} className="skill-bubble">{skill}</span>
                     ))}
                   </div>
                 </div>
@@ -261,13 +256,13 @@ function Experience() {
           </div>
 
           <div className="timeline">
-            {leadershipExperiences.map((exp) => (
+            {leadershipExperiences.map((exp, idx) => (
               <div
                 className="timeline-item"
                 key={exp.id}
                 data-aos="fade-up"
+                data-aos-delay={idx * 60}
               >
-                <div className="timeline-date">{exp.dateTotal}</div>
                 <div className="timeline-title-wrapper" onClick={() => setActivePopup(exp)}>
                   <div className="timeline-title">{exp.title}</div>
                   <a
@@ -275,11 +270,11 @@ function Experience() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="timeline-company-link"
+                    onClick={e => e.stopPropagation()}
                   >
-                    {exp.company.split('\n').map((line, i) => (
-                      <span key={i}>{line}<br /></span>
-                    ))}
+                    {exp.company}
                   </a>
+                  <div className="timeline-date">{exp.dateTotal}</div>
                   <div className="experience-skills">
                     {exp.skills.map((skill, i) => (
                       <span key={i} className="skill-bubble">{skill}</span>

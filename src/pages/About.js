@@ -4,8 +4,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Github, Linkedin, Mail, FileMinus } from 'lucide-react';
 
-import pic1 from '../assets/images/aboutme.png';
-import strip from '../assets/images/aboutmestrip.png';
 import resume from '../assets/AnaiysaaResume2026.pdf';
 import headshot from '../assets/images/headshot.JPEG';
 
@@ -18,10 +16,11 @@ const socialLinks = [
 
 function About() {
   useEffect(() => {
-    AOS.init({ 
-      duration: 3500, 
-      offset: 20,
-      once: false
+    AOS.init({
+      duration: 1200,
+      offset: 60,
+      once: true,
+      easing: 'ease-out-cubic',
     });
   }, []);
 
@@ -29,49 +28,57 @@ function About() {
     <div>
       <section id="about">
         <div className="about-container">
-          <img src={strip} 
-            className="about-strip"
-            data-aos="fade-up"
-            data-aos-delay="200" />
-          <img 
-            src={headshot} 
-            className="postcard" 
-            data-aos="fade-up"
-            data-aos-delay="200"
-          />
-          <div 
-            className="about-text"
-            data-aos="fade-up"
-            data-aos-delay="400"
+
+          {/* Circular headshot — left side */}
+          <div
+            className="about-photo-wrap"
+            data-aos="fade-right"
+            data-aos-delay="100"
           >
-            <div className="about-header">Hi, I'm Anaiysaa!</div>  
+            <img src={headshot} className="about-headshot" alt="Anaiysaa Deswal" />
+          </div>
+
+          {/* Text — right side */}
+          <div
+            className="about-text"
+            data-aos="fade-left"
+            data-aos-delay="200"
+          >
+            <div className="about-header">Hi, I'm Anaiysaa!</div>
             <p>
-              I'm a sophomore at Purdue University studying Computer Science and passionate about building technology that creates meaningful impact. I am specializing in Artificial Intelligence & Machine Learning, Computational Systems Engineering, and Software Engineering, with a strong interest in projects that bring together data, AI, and complex computing systems to solve real-world challenges. <br></br><br></br>
-              Alongside my technical interests, I am pursuing a certificate in Entrepreneurship and Innovation, where I combine creative problem-solving with leadership and business strategy. These experiences have strengthened my ability to guide teams, give back through volunteering  and mentorship, and make a lasting impact beyond the screen. <br></br><br></br>
-              Outside of academics, I enjoy playing and listening to music, exploring art and design, and swimming — all of which help me stay inspired, balanced, and refreshed. Here’s a look into my journey so far...<br></br><br></br>
+              I'm a sophomore at Purdue University studying Computer Science and passionate about building technology that creates meaningful impact. I am specializing in Artificial Intelligence & Machine Learning, Computational Systems Engineering, and Software Engineering, with a strong interest in projects that bring together data, AI, and complex computing systems to solve real-world challenges.
             </p>
+            <br />
+            <p>
+              Alongside my technical interests, I am pursuing a certificate in Entrepreneurship and Innovation, where I combine creative problem-solving with leadership and business strategy. These experiences have strengthened my ability to guide teams, give back through volunteering and mentorship, and make a lasting impact beyond the screen.
+            </p>
+            <br />
+            <p>
+              Outside of academics, I enjoy playing and listening to music, exploring art and design, and swimming — all of which help me stay inspired, balanced, and refreshed. Here's a look into my journey so far...
+            </p>
+
             <div className="about-ender">Enjoy</div>
+
             <div className="about-social-links">
               {socialLinks.map((social) => {
                 const IconComponent = social.icon;
                 return (
-                  <a 
-                    key={social.name} 
-                    href={social.url} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="about-social-icon" 
+                  <a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="about-social-icon"
                     title={social.name}
                   >
-                    <IconComponent size={24} />
+                    <IconComponent size={22} />
                   </a>
                 );
               })}
             </div>
           </div>
-          <div className="sidepics">
-            
-          </div>
+
+
         </div>
       </section>
     </div>

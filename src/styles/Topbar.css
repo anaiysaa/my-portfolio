@@ -18,9 +18,9 @@
 .links {
   list-style: none;
   display: flex;
-  gap: 130px;
+  gap: clamp(16px, 6vw, 130px);
   justify-content: center;
-  padding-right: 30px;
+  padding-right: clamp(10px, 2vw, 30px);
   cursor: pointer;
 }
 
@@ -28,7 +28,7 @@
   font-family: 'Old Standard', serif;
   text-decoration: none;
   color: black;
-  font-size: 22.5px;
+  font-size: clamp(13px, 1.5vw, 22.5px);
   transition: color 0.3s ease;
   margin-top: 0;
   margin-bottom: 0;
@@ -36,7 +36,24 @@
 }
 
 .links a:hover {
-  color: #121111;
+  color: var(--color-rosewood);
+}
+
+/* Active section highlight */
+.links a.active {
+  color: var(--color-rosewood);
+  position: relative;
+}
+
+.links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: var(--color-rosewood);
+  border-radius: 2px;
 }
 
 .logo {
@@ -53,10 +70,26 @@
   font-family: 'Pinyon Script', cursive;
   text-decoration: none;
   color: var(--color-rosewood);
-  font-size: 30px;
+  font-size: clamp(20px, 2.5vw, 30px);
   transition: color 0.3s ease;
 }
 
 .logo a:hover {
   color: #121111;
+}
+
+@media (max-width: 600px) {
+  .topbar {
+    height: 40px;
+  }
+  .links {
+    gap: clamp(10px, 4vw, 24px);
+    padding-right: 8px;
+  }
+  .links a {
+    font-size: clamp(11px, 3.5vw, 16px);
+  }
+  .logo a {
+    font-size: clamp(18px, 5vw, 24px);
+  }
 }

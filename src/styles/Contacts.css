@@ -37,136 +37,111 @@ body, html {
   display: block;
 }
 
+/* Form spans full postcard wrapper — each field positioned absolutely */
 .contact-form {
   position: absolute;
-  top: 58%;
-  left: 47%;
-  transform: translate(-50%, -50%);
-  
-  rotate: -2deg;
-  
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  
-  background-color: transparent;
+  inset: 0;
+  background: transparent;
+  pointer-events: none;
   padding: 0;
-  
-  width: 50%;
-  max-width: 340px;
-  
-  color: #FFFCF2;
-  font-family: 'Lora', serif;
+  margin: 0;
+  rotate: -1.5deg;
+  transform-origin: 53% 54%;
 }
 
+/* Shared field wrapper */
 .field {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
+  position: absolute;
+  pointer-events: all;
+  display: block;
 }
 
-.subject-input {
-  background-color: rgba(255, 255, 255, 0.1);
-  
-  width: 75%;
-  height: 35px;
-  
-  border: none;
-  border-radius: 4px;
-  
-  color: #000000;
-  font-size: 14px;
-  font-family: 'Lora', serif;
-  
-  padding: 2px 8px;
-  box-sizing: border-box;
+/* ── SUBJECT field ── */
+.field-subject {
+  top: 32.5%;
+  left: 38%;
+  width: 24%;
+  height: 4.5%;
 }
 
-.subject-input:focus {
-  outline: 2px solid rgba(127, 165, 177, 0.5);
-  background-color: rgba(255, 255, 255, 0.2);
+/* ── EMAIL field ── */
+.field-email {
+  top: 40%;
+  left: 36%;
+  width: 26%;
+  height: 4.5%;
 }
 
-.email-input {
-  background-color: rgba(255, 255, 255, 0.1);
-  
-  width: 80%;
-  height: 35px;
-  
-  border: none;
-  border-radius: 4px;
-  
-  color: #000000;
-  font-size: 14px;
-  font-family: 'Lora', serif;
-  
-  padding: 4px 8px;
-  box-sizing: border-box;
-  
-  /* Spacing from subject box */
-  margin-top: 20px;
+/* ── MESSAGE field ── */
+.field-message {
+  top: 54%;
+  left: 29%;
+  width: 33%;
+  height: 26%;
 }
 
-.email-input:focus {
-  outline: 2px solid rgba(127, 165, 177, 0.5);
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.message-input {
-  background-color: rgba(255, 255, 255, 0.1);
-  
-  width: 100%;
-  height: 180px;
-  
-  border: none;
-  border-radius: 4px;
-  
-  color: #000000;
-  font-size: 14px;
-  font-family: 'Lora', serif;
-  
-  padding: 8px;
-  box-sizing: border-box;
-  
-  resize: none;
-  
-  /* Spacing from email box */
-  margin-top: 65px;
-}
-
-.message-input:focus {
-  outline: 2px solid rgba(127, 165, 177, 0.5);
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.contact-form button {
+/* ── SEND button ── */
+.field-submit {
+  position: absolute;
+  pointer-events: all;
+  top: 82%;
+  left: 58%;
   background-color: transparent;
   color: #000000b9;
-  
-  padding: 8px 16px;
-  margin-top: 8px;
-  
+  padding: 4px 12px;
   border: none;
   border-radius: 2px;
-  
   font-family: 'Lora', serif;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
-  
   cursor: pointer;
   transition: 0.2s ease;
-  
-  align-self: flex-end;
 }
 
-.contact-form button:hover {
+.field-submit:hover {
   background-color: #7fa5b1b6;
   color: #ffffff;
 }
 
-.contact-form button:disabled {
+.field-submit:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+/* Shared input styles */
+.subject-input,
+.email-input {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-radius: 3px;
+  color: #000000;
+  font-size: clamp(9px, 1vw, 13px);
+  font-family: 'Lora', serif;
+  padding: 2px 6px;
+  box-sizing: border-box;
+}
+
+.message-input {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-radius: 3px;
+  color: #000000;
+  font-size: clamp(9px, 1vw, 13px);
+  font-family: 'Lora', serif;
+  padding: 6px;
+  box-sizing: border-box;
+  resize: none;
+}
+
+.subject-input:focus,
+.email-input:focus,
+.message-input:focus {
+  outline: 1.5px solid rgba(127, 165, 177, 0.6);
+  background-color: rgba(255, 255, 255, 0.18);
 }
 
 .icons {
@@ -209,38 +184,6 @@ body, html {
   }
 }
 
-@media (max-width: 1200px) {
-  .contact-form {
-    width: 30%;
-    max-width: 360px;
-  }
-  
-  .subject-input,
-  .email-input {
-    height: 26px;
-    font-size: 13px;
-  }
-  
-  .message-input {
-    height: 150px;
-    font-size: 13px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .contact-form {
-    width: 31%;
-  }
-  
-  .email-input {
-    margin-top: 10px;
-  }
-  
-  .message-input {
-    margin-top: 12px;
-    height: 140px;
-  }
-}
 
 @media (max-width: 768px) {
   .contacts-container {

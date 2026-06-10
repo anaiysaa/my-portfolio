@@ -23,7 +23,7 @@ const Footer = () => {
             Anaiysaa note* make a tagline here!
         </p>
 
-         */}{/*
+         */}
         <div className="social-links">
           {socialLinks.map((social) => {
             const IconComponent = social.icon;
@@ -33,18 +33,18 @@ const Footer = () => {
               </a>
             );
           })}
-        </div>*/}
+        </div>
 
         <div className="footer-divider"></div>
 
-        <p className="footer-message">"Whenever someone creates something with all of their heart, then that creation is given a soul"</p>
+        <p className="footer-message"></p>
       
       
         <div className="footer-bottom">
           <div className="footer-copy">
             <span>© {currentYear}  - Made with</span>
             <Heart size={16} className="footer-heart" />
-            <span> and a lot of vanilla bean cold brew from Saxby's</span>
+            <span> and a lot of vanilla chai from Vienna</span>
           </div>
         </div>
 

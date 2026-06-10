@@ -1,241 +1,217 @@
-h1 {
-  font-size: 30px;
-  font-weight: normal;
-  margin: 0;
-}
+/* ═══════════════════════════════════════════
+   Experience — global tag overrides (scoped)
+═══════════════════════════════════════════ */
+.experience-wrapper h1 { font-size: 28px; font-weight: normal; margin: 0; }
+.experience-wrapper h2 { font-size: clamp(40px, 5vw, 72px); font-weight: normal; }
+.experience-wrapper b  { font-family: "Cutive Mono", monospace; font-weight: normal; font-size: 14px; }
 
-h2 {
-  font-size: 75px;
-  font-weight: normal;
-}
-
-b {
-  font-family: "Cutive Mono", monospace;
-  font-weight: normal;
-  font-size: 15px;
-}
-
-a, .timeline-company-link {
-  transform: scale(1.02);
-  transition: transform 0.3s ease, border-bottom 0.3s ease;
-  text-decoration: none;
-}
-
-a:hover, .timeline-company-link:hover {
-  transform: scale(1.05);
-  color: var(--color-rosewood);
-}
-
+/* ═══════════════════════════════════════════
+   Layout shell
+═══════════════════════════════════════════ */
 .experience-wrapper {
   display: flex;
   flex-direction: row;
   min-height: 100vh;
-  background: #FFFCF5;
+  background: var(--color-white);
   font-family: 'Old Standard TT', serif;
 }
 
 .experience-panel-full {
   width: 100%;
-  padding-left: 65px;
-  padding-top: 40px;
+  padding: 48px clamp(24px, 6vw, 120px) 64px;
+  box-sizing: border-box;
   font-family: 'Pinyon Script', cursive;
   color: var(--color-rosewood);
 }
 
-.experience-panel {
-  flex: 1.9;
-  padding-left: 65px;
-  padding-top: 40px;
-  font-size: 75px;
-  border-right: 1px solid #121111;
-  font-family: 'Pinyon Script', cursive;
-}
-
-.skills-panel {
-  font-family: 'Pinyon Script', cursive;
-  flex: 1.1;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  overflow: hidden;
-  padding-top: -100px;
-}
-
+/* ═══════════════════════════════════════════
+   Timeline container & line
+═══════════════════════════════════════════ */
 .timeline-container {
-  background-color: transparent;
-  padding-top: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-top: 16px;
   font-family: 'Old Standard TT', serif;
   color: black;
-  min-height: 100vh;
   position: relative;
 }
 
+/* The continuous vertical line lives on .timeline itself */
 .timeline {
   position: relative;
-  margin-left: 280px;
-  padding-left: 0px;
+  padding-left: 48px;
+  border-left: 1.5px solid rgba(18, 17, 17, 0.18);
+  margin-left: clamp(0px, 2vw, 40px);
+  overflow: visible;
 }
 
+/* ═══════════════════════════════════════════
+   Timeline items
+═══════════════════════════════════════════ */
 .timeline-item {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 60px;
   position: relative;
-  opacity: 0;
-  animation: fadeInUp 4s ease-out forwards;
+  margin-bottom: 72px;
+  cursor: pointer;
 }
 
+/* Dot on the timeline line */
 .timeline-item::before {
   content: '';
   position: absolute;
-  left: 0;
-  top: 0;
-  width: 0.5px;
-  height: calc(100% + 30px);
-  background-color: #121111;
-  z-index: 1;
+  left: calc(-48px - 7px);   /* padding-left + half of 14px dot */
+  top: 7px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--color-rosewood);
+  background: var(--color-white);
+  z-index: 2;
+  transition: background 0.25s ease, transform 0.25s ease;
 }
 
-.timeline-item:last-child::before {
-  height: 50px;
+.timeline-item:hover::before {
+  background: var(--color-rosewood);
+  transform: scale(1.2);
 }
 
-.timeline-item[data-aos="fade-up"] {
-  opacity: 1;
-}
-
-.timeline-date {
-  position: absolute;
-  left: -300px;
-  font-family: "Cutive Mono", monospace;
-  font-size: 14px;
-  text-align: right;
-  width: 260px;
+/* ═══════════════════════════════════════════
+   Entry content
+═══════════════════════════════════════════ */
+.timeline-title-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .timeline-title {
-  margin-left: 20px;
-  cursor: pointer;
-  font-size: 23px;
-  transform: scale(1);
-  transition: transform 0.3s ease;
+  font-size: clamp(20px, 2.2vw, 30px);
+  font-family: 'Old Standard TT', serif;
+  color: black;
+  transition: color 0.25s ease;
+  line-height: 1.3;
 }
 
-.timeline-title:hover {
-  transform: scale(1.05);
+.timeline-item:hover .timeline-title {
   color: var(--color-rosewood);
 }
 
 .timeline-company-link {
-  display: block;
-  font-size: 17px;
-  margin-top: 4px;
-  margin-left: 20px;
-  color: black;
+  display: inline-block;
+  font-size: clamp(15px, 1.5vw, 20px);
+  font-family: 'Old Standard TT', serif;
+  color: var(--color-rosewood);
   text-decoration: none;
-  transform: scale(1);
-  transition: transform 0.3s ease, color 0.2s ease;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
 }
 
 .timeline-company-link:hover {
-  transform: scale(1.05);
-  color: var(--color--rosewood);
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Date — now inline, below company */
+.timeline-date {
+  font-family: "Cutive Mono", monospace;
+  font-size: clamp(12px, 1.1vw, 15px);
+  color: rgba(18, 17, 17, 0.5);
+  margin-top: 2px;
+  margin-bottom: 8px;
 }
 
 .experience-skills {
-  margin-top: 10px;
-  margin-left: 20px;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 7px;
+  margin-top: 8px;
 }
 
 .skill-bubble {
-  background-color: rgba(177, 205, 213, 0.25);
-  padding: 6px 12px;
+  background-color: rgba(177, 205, 213, 0.22);
+  padding: 5px 12px;
   border-radius: 20px;
-  font-size: 12px;
+  font-size: clamp(11px, 0.9vw, 13px);
   color: black;
-  border: 1px solid black;
-  transition: all 0.3s ease;
-  font-weight: 500;
+  border: 1px solid rgba(0,0,0,0.25);
+  transition: all 0.25s ease;
+  font-family: 'Old Standard TT', serif;
 }
 
 .skill-bubble:hover {
   background-color: var(--color-rosewood);
-  transform: scale(1.05);
+  border-color: var(--color-rosewood);
   color: white;
+  transform: translateY(-1px);
 }
 
+/* ═══════════════════════════════════════════
+   Section dividers (sticky)
+═══════════════════════════════════════════ */
 .section-divider {
-  margin-left: 280px;
+  position: sticky;
+  top: 45px;            /* clears the topbar */
+  z-index: 10;
+  background: var(--color-white);
+  margin-bottom: 32px;
   margin-top: 40px;
-  margin-bottom: 30px;
+  padding: 8px 0;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 
-.section-divider::before {
-  content: '';
-  flex: 1;
-  height: 0.5px;
-  background-color: #121111;
-  max-width: 40px;
-}
-
+.section-divider::before,
 .section-divider::after {
   content: '';
   flex: 1;
   height: 0.5px;
-  background-color: #121111;
+  background-color: rgba(18, 17, 17, 0.25);
 }
+
+.section-divider::before { max-width: 32px; }
 
 .section-divider-label {
   font-family: 'Cutive Mono', monospace;
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  color: #121111;
+  font-size: clamp(11px, 1vw, 13px);
+  letter-spacing: 0.1em;
+  color: rgba(18, 17, 17, 0.55);
   white-space: nowrap;
+  text-transform: uppercase;
 }
 
+/* ═══════════════════════════════════════════
+   Popup / detail modal
+═══════════════════════════════════════════ */
 .popup-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(10, 20, 25, 0.85);
+  inset: 0;
+  background-color: rgba(10, 20, 25, 0.82);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  animation: fadeIn 0.3s ease-out;
+  animation: fadeIn 0.25s ease-out;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .popup-content {
   background-color: #FFFCF2;
   font-family: 'Old Standard TT', serif;
-  padding: 40px;
-  border-radius: 8px;
-  max-width: 1200px;
+  padding: clamp(20px, 3vw, 44px);
+  border-radius: 10px;
+  max-width: 860px;
   width: 100%;
   color: #121111;
   overflow-y: auto;
   max-height: 90vh;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.25);
 }
+
+.top { display: flex; flex-direction: column; }
 
 .right {
-  padding-left: 0;
   width: 100%;
   font-size: 16px;
-  line-height: 1.6;
-}
-
-.right.full-width {
-  padding-left: 0;
+  line-height: 1.65;
 }
 
 .left {
@@ -244,89 +220,79 @@ a:hover, .timeline-company-link:hover {
   margin-top: 20px;
 }
 
-.top {
-  display: flex;
-  flex-direction: column;
-}
-
-
 .popup-skills {
-  margin: 15px 0;
-  font-family: 'Old Standard TT', serif;;
+  margin: 16px 0 8px;
+  font-family: 'Old Standard TT', serif;
   font-size: 16px;
 }
 
 .popup-skill-bubble {
-  background-color: rgba(177, 205, 213, 0.25);
+  background-color: rgba(177, 205, 213, 0.22);
   color: #121111;
-  padding: 8px 16px;
+  padding: 7px 15px;
   border-radius: 20px;
-  font-size: 14px;
-  font-weight: 500;
-  margin-right: 10px;
+  font-size: 13px;
+  margin-right: 8px;
   margin-top: 8px;
   display: inline-block;
   border: 1px solid #121111;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 
 .popup-skill-bubble:hover {
   background-color: var(--color-rosewood);
-  transform: scale(1.05);
   color: white;
 }
 
-.popup-collage {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+.popup-collage { width: 100%; display: flex; justify-content: center; align-items: center; }
+.popup-collage img { width: 100%; height: auto; max-width: 100%; object-fit: contain; }
 
-.popup-collage img {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  object-fit: contain;
-  border-radius: 0px;
+/* ═══════════════════════════════════════════
+   Keyframes
+═══════════════════════════════════════════ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-
-.photo-bar {
-  width: 40%;
-  height: 100%;
-  display: flex;
-}
-
-@keyframes slideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
-
 @keyframes fadeOut {
-  0% {
-    opacity: 1;
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+.popup-overlay.fade-out { animation: fadeOut 0.25s ease-out forwards; }
+
+/* ═══════════════════════════════════════════
+   Responsive
+═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .experience-panel-full {
+    padding: 40px 20px 48px;
   }
-  100% {
-    opacity: 0;
+  .timeline {
+    padding-left: 32px;
+    margin-left: 0;
+  }
+  .timeline-item::before {
+    left: calc(-32px - 7px);
+  }
+  .popup-content {
+    padding: 20px 16px;
+    max-width: 100%;
   }
 }
 
-.popup-overlay.fade-out {
-  animation: fadeOut 0.3s ease-out forwards;
+@media (max-width: 480px) {
+  .timeline {
+    padding-left: 24px;
+  }
+  .timeline-item::before {
+    left: calc(-24px - 7px);
+  }
+  .section-divider {
+    top: 40px;
+  }
 }
-

@@ -52,6 +52,63 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.4s ease;
+}
+
+.project-card.has-cover:hover .project-cover-image {
+  transform: scale(1.04);
+}
+
+/* Hover overlay for cover cards */
+.project-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card.has-cover:hover .project-card-overlay {
+  opacity: 1;
+}
+
+.project-card-overlay-title {
+  color: white;
+  font-family: 'Old Standard TT', serif;
+  font-size: clamp(16px, 1.6vw, 22px);
+  font-weight: normal;
+  margin: 0 0 10px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+.project-card-overlay-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.project-overlay-tag {
+  font-family: 'Cutive Mono', monospace;
+  font-size: clamp(9px, 0.8vw, 12px);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 20px;
+  padding: 3px 10px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(4px);
+}
+
+/* Date on non-cover cards */
+.project-card-date {
+  font-family: 'Cutive Mono', monospace;
+  font-size: 11px;
+  color: rgba(42,42,42,0.55);
+  margin-top: 8px;
 }
 
 
@@ -82,28 +139,29 @@
 }
 
 .project-card {
-  background: var(--color-white);;
-  border-radius: 5px;
-  border: 1px solid black;
-  padding: 40px;
+  background: var(--color-white);
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.15);
+  padding: 36px 28px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
 
 .project-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
 
 .project-card-title {
-  font-family: 'Courier New', monospace;
-  font-size: 28px;
-  margin-bottom: 15px;
+  font-family: 'Old Standard TT', serif;
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: normal;
+  margin-bottom: 10px;
   color: #2a2a2a;
   text-align: center;
 }

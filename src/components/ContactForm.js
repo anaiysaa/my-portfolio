@@ -36,7 +36,7 @@ function ContactForm() {
       {/* Replace with your actual Web3Forms access key */}
       <input type="hidden" name="access_key" value="622c89ef-cfbc-40f4-90cc-c6e9bf5ca263" />
       
-      <div className="field">
+      <div className="field field-subject">
         <input
           type="text"
           name="subject"
@@ -45,8 +45,8 @@ function ContactForm() {
           required
         />
       </div>
-      
-      <div className="field">
+
+      <div className="field field-email">
         <input
           type="email"
           name="email"
@@ -55,8 +55,8 @@ function ContactForm() {
           required
         />
       </div>
-      
-      <div className="field">
+
+      <div className="field field-message">
         <textarea
           name="message"
           className="message-input"
@@ -64,8 +64,8 @@ function ContactForm() {
           required
         />
       </div>
-      
-      <button type="submit" disabled={status === 'sending'}>
+
+      <button type="submit" className="field-submit" disabled={status === 'sending'}>
         {status === 'sending' ? 'SENDING...' : 'SEND'}
       </button>
       
