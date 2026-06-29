@@ -1,7 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import '../styles/Education.css';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import Gallery from '../components/PinterestGallery';
 const educationData = [
   {
@@ -59,10 +57,6 @@ const educationData = [
 ];
 
 function Education() {
-  useEffect(() => {
-    AOS.init({ duration: 1000, offset: 0, once: false });
-  }, []);
-
   return (
     <div className="education-wrapper">
       <div className="education-panel-full">
@@ -74,6 +68,9 @@ function Education() {
               key={educationData[0].id}
               className="education-box purdue-box"
               data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-offset="0"
+              data-aos-once="false"
             >
               <div className="education-header">
                 <a
@@ -117,6 +114,9 @@ function Education() {
               key={educationData[1].id}
               className="education-box high-school-box"
               data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-offset="0"
+              data-aos-once="false"
             >
               <div className="education-header">
                 <a

@@ -16,7 +16,7 @@ function Gallery({ folderPath }) {
     try {
       // This will import all images from your specified folder
       // Adjust the path based on your folder structure
-      const imageContext = require.context('../assets/gallery', false, /\.(png|jpe?g|svg|gif|webp)$/);
+      const imageContext = require.context('../assets/gallery', false, /\.webp$/);
       const imageList = importAll(imageContext);
       setImages(imageList);
     } catch (error) {

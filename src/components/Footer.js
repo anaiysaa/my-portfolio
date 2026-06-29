@@ -1,15 +1,15 @@
 import React from 'react';
-import { Github, Linkedin, Twitter, Instagram, Mail, FileMinus, Heart } from 'lucide-react';
+import { Github, Linkedin, Mail, FileMinus, Heart } from 'lucide-react';
 import '../styles/Footer.css';
+
+import resume from '../assets/AnaiysaaResume2026.pdf';
 
 const Footer = () => {
    const socialLinks = [
     { name: 'GitHub', url: 'https://github.com/anaiysaa', icon: Github },
     { name: 'LinkedIn', url: 'https://www.linkedin.com/in/anaiysaadeswal/', icon: Linkedin },
-    /*{ name: 'Twitter', url: 'https://twitter.com/yourusername', icon: Twitter },
-    { name: 'Instagram', url: 'https://instagram.com/yourusername', icon: Instagram }*/
     { name: 'Email', url: 'mailto:adeswal@purdue.edu', icon: Mail },
-    { name: 'Resume', url: '', icon: FileMinus}
+    { name: 'Resume', url: resume, icon: FileMinus}
   ];
 
   const currentYear = new Date().getFullYear();
@@ -17,13 +17,6 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        {/*}
-        <h2 className="footer-title">Anaiysaa Deswal</h2>
-        <p className="footer-tagline">
-            Anaiysaa note* make a tagline here!
-        </p>
-
-         */}
         <div className="social-links">
           {socialLinks.map((social) => {
             const IconComponent = social.icon;
@@ -37,9 +30,6 @@ const Footer = () => {
 
         <div className="footer-divider"></div>
 
-        <p className="footer-message"></p>
-      
-      
         <div className="footer-bottom">
           <div className="footer-copy">
             <span>© {currentYear}  - Made with</span>

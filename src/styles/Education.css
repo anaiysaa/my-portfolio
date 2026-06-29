@@ -3,12 +3,12 @@
 /* Scoped overrides — only inside education boxes */
 .education-box h4 {
   font-family: 'Cutive Mono', monospace;
-  font-size: clamp(13px, 1.1vw, 16px);
+  font-size: clamp(10px, 0.8vw, 12px);
   font-weight: normal;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: black;
-  margin: 18px 0 8px 0;
+  margin: 7px 0 4px 0;
 }
 
 .education-box h5 {
@@ -42,18 +42,19 @@
 .education-wrapper {
   display: flex;
   flex-direction: row;
-  min-height: 100vh;
+  height: 100vh;
   background: var(--color-white);
 }
 
 .education-panel-full {
-  flex: 1 1 45%;
+  flex: 0 0 50%;
+  width: 50%;
   min-width: 0;
-  min-height: 100vh;
-  padding-top: 50px;
+  height: 100%;
+  padding-top: 30px;
   padding-left: clamp(16px, 3vw, 40px);
   padding-right: clamp(16px, 2vw, 30px);
-  padding-bottom: clamp(20px, 3vw, 48px);
+  padding-bottom: clamp(10px, 1.5vw, 24px);
   font-size: clamp(40px, 5vw, 75px);
   color: var(--color-rosewood);
   font-family: 'Pinyon Script', cursive;
@@ -65,11 +66,12 @@
 }
 
 .pinterest-gallery-container {
-  flex: 1 1 55%;
+  flex: 0 0 50%;
+  width: 50%;
   min-width: 0;
-  height: 100vh;
-  overflow: hidden;
-  position: sticky;
+  height: 100%;
+  overflow-y: auto;
+  position: relative;
   top: 0;
   background: var(--color-white);
   scrollbar-width: none;
@@ -81,9 +83,9 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: clamp(16px, 2vw, 28px);
+  gap: clamp(8px, 1vw, 14px);
   min-height: 0;
-  margin: 0 clamp(8px, 1.5vw, 20px) clamp(8px, 1.5vw, 20px);
+  margin: 0 clamp(8px, 1.5vw, 20px) clamp(4px, 0.8vw, 10px);
 }
 
 .education-left {
@@ -98,14 +100,14 @@
   background: transparent;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  padding: clamp(24px, 3vw, 48px);
-  padding-top: clamp(28px, 3.5vw, 52px);
+  padding: clamp(12px, 1.5vw, 24px);
+  padding-top: clamp(14px, 2vw, 28px);
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
   width: 100%;
   box-sizing: border-box;
   font-family: 'Old Standard TT', serif;
-  font-size: clamp(16px, 1.5vw, 21px);
+  font-size: clamp(14px, 1.2vw, 18px);
   overflow-y: auto;
 }
 
@@ -131,10 +133,10 @@
 .education-header {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 3px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-  padding-bottom: 14px;
-  margin-bottom: 20px;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
   font-family: 'Old Standard TT', serif;
 }
 
@@ -161,7 +163,7 @@
 }
 
 .education-degree {
-  font-size: clamp(18px, 1.75vw, 24px);
+  font-size: clamp(14px, 1.3vw, 18px);
   color: black;
   font-family: 'Old Standard TT', serif;
   font-weight: 500;
@@ -171,7 +173,7 @@
 
 .education-minors {
   font-family: 'Old Standard TT', serif;
-  font-size: clamp(14px, 1.3vw, 18px);
+  font-size: clamp(12px, 1vw, 15px);
   color: black;
   margin: 0;
   line-height: 1.4;
@@ -194,7 +196,7 @@
 
 
 .education-section {
-  margin-bottom: 20px;
+  margin-bottom: 6px;
 }
 
 .courses-grid {
@@ -211,15 +213,15 @@
 .education-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 8px;
+  gap: 4px;
+  margin-top: 4px;
 }
 
 .education-tag {
   background-color: rgba(177, 205, 213, 0.22);
-  padding: 5px 12px;
+  padding: 2px 7px;
   border-radius: 20px;
-  font-size: clamp(14px, 1.1vw, 16px);
+  font-size: clamp(10px, 0.75vw, 12px);
   font-weight: normal;
   font-family: 'Old Standard TT', serif;
   transition: all 0.25s ease;

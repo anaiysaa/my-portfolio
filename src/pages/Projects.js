@@ -1,25 +1,19 @@
 // Projects.js
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import '../styles/Projects.css';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 
-import hairIQ from '../assets/project_slides/HairIQ.png';
-import hairIQCover from '../assets/project_slides/HairIQ_Cover.jpg';
-import datamineCover from '../assets/project_slides/datamineCover.png';
-import datamineImage from '../assets/project_slides/J&JPoster.png';
-import workwayvesCover from '../assets/project_slides/workwayvesCover.png';
-import vipCover from '../assets/project_slides/vipCover.png';
-import Vip from '../assets/project_slides/VIP.png';
-import workwayvesImage from '../assets/project_slides/workwayves.png';
+import hairIQ from '../assets/project_slides/HairIQ.webp';
+import hairIQCover from '../assets/project_slides/HairIQ_Cover.webp';
+import datamineCover from '../assets/project_slides/datamineCover.webp';
+import datamineImage from '../assets/project_slides/J&JPoster.webp';
+import workwayvesCover from '../assets/project_slides/workwayvesCover.webp';
+import vipCover from '../assets/project_slides/vipCover.webp';
+import Vip from '../assets/project_slides/VIP.webp';
+import workwayvesImage from '../assets/project_slides/workwayves.webp';
 
 function Projects() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const scrollContainerRef = useRef(null);
-
-  useEffect(() => {
-    AOS.init({ duration: 700, offset: 40, once: true, easing: 'ease-out-cubic' });
-  }, []);
 
   const projects = [
     {
@@ -129,7 +123,7 @@ function Projects() {
       >
         {/* Slide 0: Grid of all projects */}
         <div className="project-slide grid-slide">
-          <div className="projects-grid" data-aos="fade-up" data-aos-duration="800">
+          <div className="projects-grid" data-aos="fade-up" data-aos-duration="800" data-aos-offset="40">
             {projects.map((project, index) => (
                 <div
                   key={project.id}
@@ -139,7 +133,7 @@ function Projects() {
                   {project.cover !== "none" ? (
                     <>
                       <img src={project.cover} alt={`${project.name} cover`}
-                        className="project-cover-image" />
+                        className="project-cover-image" loading="lazy" />
                       <div className="project-card-overlay">
                         <h3 className="project-card-overlay-title">{project.name}</h3>
                         <div className="project-card-overlay-tags">
@@ -169,7 +163,7 @@ function Projects() {
         <div key={`slide-${project.id}`} className="project-slide detail-slide">
           {project.image && project.image !== "none" ? (
             <div className="project-image-wrapper">
-              <img src={project.image} alt={project.name} className="project-full-image" />
+              <img src={project.image} alt={project.name} className="project-full-image" loading="lazy" />
             </div>
           ) : (
             <div className="project-detail-content">

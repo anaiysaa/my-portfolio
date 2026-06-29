@@ -1,23 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import '../styles/Experience.css';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 
 import Gallery from '../components/ExpPinGallery';
 
 // EV Grand Prix photos
-import EV1 from '../assets/experience_gallery/GrandPrix/EV.JPEG';
-import EV2 from '../assets/experience_gallery/GrandPrix/EV2.JPEG';
-import EV5 from '../assets/experience_gallery/GrandPrix/EV5.JPEG';
-import EV6 from '../assets/experience_gallery/GrandPrix/EV6.JPEG';
+import EV1 from '../assets/experience_gallery/GrandPrix/EV.webp';
+import EV2 from '../assets/experience_gallery/GrandPrix/EV2.webp';
+import EV5 from '../assets/experience_gallery/GrandPrix/EV5.webp';
+import EV6 from '../assets/experience_gallery/GrandPrix/EV6.webp';
 
 // J&J / Data Mine photos
-import JJ1 from '../assets/experience_gallery/DataMine/J&J.JPEG';
+import JJ1 from '../assets/experience_gallery/DataMine/J&J.webp';
 
 // Northwest Nuclear Labs photos
-import NWNL1 from '../assets/experience_gallery/NWNL/NWNL1.jpg';
-import NWNL2 from '../assets/experience_gallery/NWNL/NWNL2.JPEG';
-import NWNL3 from '../assets/experience_gallery/NWNL/NWNL3.JPEG';
+import NWNL1 from '../assets/experience_gallery/NWNL/NWNL1.webp';
+import NWNL2 from '../assets/experience_gallery/NWNL/NWNL2.webp';
+import NWNL3 from '../assets/experience_gallery/NWNL/NWNL3.webp';
 
 const technicalExperiences = [
   {
@@ -208,10 +206,6 @@ function Experience() {
     }, 300);
   };
 
-  useEffect(() => {
-    AOS.init({ duration: 800, offset: 60, once: true, easing: 'ease-out-cubic' });
-  }, []);
-
   return (
     <div className="experience-wrapper">
       <div className="experience-panel-full">
@@ -228,6 +222,9 @@ function Experience() {
                 key={exp.id}
                 data-aos="fade-up"
                 data-aos-delay={idx * 60}
+                data-aos-duration="800"
+                data-aos-offset="60"
+                data-aos-once="false"
               >
                 <div className="timeline-title-wrapper" onClick={() => setActivePopup(exp)}>
                   <div className="timeline-title">{exp.title}</div>
@@ -262,6 +259,9 @@ function Experience() {
                 key={exp.id}
                 data-aos="fade-up"
                 data-aos-delay={idx * 60}
+                data-aos-duration="800"
+                data-aos-offset="60"
+                data-aos-once="false"
               >
                 <div className="timeline-title-wrapper" onClick={() => setActivePopup(exp)}>
                   <div className="timeline-title">{exp.title}</div>

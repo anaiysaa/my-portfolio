@@ -208,7 +208,7 @@
   font-size: 18px;
   padding: 12px 30px;
   background: var(--color-rosewood, #8B4755);
-  color: var(--color-rosewood, #FFFCF5);
+  color: var(--color-white, #FFFCF5);
   cursor: pointer;
   transition: all 0.3s ease;
 }

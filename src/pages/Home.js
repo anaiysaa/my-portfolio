@@ -1,7 +1,6 @@
 import React from 'react';
 import '../styles/Home.css';
 
-import Topbar from '../components/Topbar';
 import Video from '../assets/videos/videoBackground.MP4'
 import AutoPause from '../components/AutoPause.js';
 

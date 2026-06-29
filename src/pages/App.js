@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../styles/App.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import Topbar from '../components/Topbar';
 import Home from './Home.js';
@@ -11,6 +13,10 @@ import Contacts from './Contacts.js';
 import Experience from './Experience.js';
 
 function App() {
+  useEffect(() => {
+    AOS.init({ duration: 1000, offset: 50, once: true, easing: 'ease-out-cubic' });
+  }, []);
+
   return (
     <div className="app-container">
       <Topbar />
@@ -18,7 +24,7 @@ function App() {
         <section id="home">
           <Home />
         </section>
-        <section id="about">``
+        <section id="about">
           <About />
         </section>
         <section id="experience">

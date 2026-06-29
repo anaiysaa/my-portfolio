@@ -1,11 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import '../styles/About.css';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import { Github, Linkedin, Mail, FileMinus } from 'lucide-react';
 
 import resume from '../assets/AnaiysaaResume2026.pdf';
-import headshot from '../assets/images/headshot.JPEG';
+import headshot from '../assets/images/headshot.webp';
 
 const socialLinks = [
     { name: 'GitHub', url: 'https://github.com/anaiysaa', icon: Github },
@@ -15,15 +13,6 @@ const socialLinks = [
   ];
 
 function About() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1200,
-      offset: 60,
-      once: true,
-      easing: 'ease-out-cubic',
-    });
-  }, []);
-
   return (
     <div>
       <section id="about">
@@ -34,8 +23,11 @@ function About() {
             className="about-photo-wrap"
             data-aos="fade-right"
             data-aos-delay="100"
+            data-aos-duration="1200"
+            data-aos-offset="60"
+            data-aos-once="false"
           >
-            <img src={headshot} className="about-headshot" alt="Anaiysaa Deswal" />
+            <img src={headshot} className="about-headshot" alt="Anaiysaa Deswal" loading="lazy" />
           </div>
 
           {/* Text — right side */}
@@ -43,6 +35,9 @@ function About() {
             className="about-text"
             data-aos="fade-left"
             data-aos-delay="200"
+            data-aos-duration="1200"
+            data-aos-offset="60"
+            data-aos-once="false"
           >
             <div className="about-header">Hi, I'm Anaiysaa!</div>
             <p>
